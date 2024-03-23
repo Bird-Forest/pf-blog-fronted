@@ -1,10 +1,15 @@
 import React from 'react';
-import { BsFillBookmarkFill, BsCircleFill } from 'react-icons/bs';
+import {
+  BsFillBookmarkFill,
+  BsCircleFill,
+  BsHandThumbsUpFill,
+} from 'react-icons/bs';
 import {
   PostText,
   WrapImgPost,
   WrapInfo,
   WrapPost,
+  WrapReviews,
   WrapTag,
   WrapTitle,
 } from './CreatePosts/posts.styled';
@@ -32,9 +37,19 @@ export default function Post({ post }) {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita
           fugiat adipisci itaque maxime ex eius atque esse praesentium porro!
           Ratione maxime sed, quidem alias consequuntur dicta assumenda
-          accusamus consectetur error!
+          accusamus consectetur error! Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Expedita fugiat adipisci itaque maxime ex eius atque
+          esse praesentium porro! Ratione maxime sed, quidem alias consequuntur
+          dicta assumenda accusamus consectetur error!
         </PostText>
       </WrapInfo>
+      <WrapReviews>
+        <button type="button" className="btn-like">
+          <BsHandThumbsUpFill className="icon-like" />
+        </button>
+        <span className="counter">{0}</span>
+        <button className="btn-comment">Comment</button>
+      </WrapReviews>
     </WrapPost>
   );
 }

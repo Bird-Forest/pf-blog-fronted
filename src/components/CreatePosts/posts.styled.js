@@ -11,17 +11,19 @@ export const WrapCreate = styled.div`
 // *******   POST *******
 export const WrapPost = styled.div`
   display: grid;
-  grid-template-columns: minmax(280px, 780px);
-  grid-template-rows: 1fr;
-  justify-content: flex-start;
+  /* grid-template-columns: minmax(280px, 780px); */
+  /* grid-template-rows: auto-fit; */
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  background-color: red;
+  background-color: white;
   border-radius: 10px;
   padding: 16px;
   margin: 0 auto;
+  @media screen and (min-width: 767px) {
+    grid-template-columns: 780px;
+  }
 `;
-
 export const WrapImgPost = styled.div`
   display: grid;
   grid-template-columns: minmax(280px, 780px);
@@ -38,7 +40,6 @@ export const WrapImgPost = styled.div`
     background-position: center; */
   }
 `;
-
 export const WrapInfo = styled.div`
   display: grid;
   gap: 8px;
@@ -89,11 +90,35 @@ export const WrapTitle = styled.div`
     padding: 4px 8px;
   }
 `;
-
 export const PostText = styled.p`
   font-size: 16px;
   color: #ff1744;
   border-radius: 16px;
   padding: 8px;
   margin: 0;
+`;
+export const WrapReviews = styled.div`
+  display: grid;
+  grid-template-columns: 40px 40px 60px;
+  justify-content: flex-start;
+  align-items: center;
+  .btn-like {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+  }
+  .icon-like {
+    fill: #ffd740;
+    width: 40px;
+    height: 40px;
+  }
+  .counter {
+    width: 40px;
+    height: 40px;
+  }
+  .btn-comment {
+    width: 60px;
+    height: 40px;
+  }
 `;
