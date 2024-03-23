@@ -10,43 +10,42 @@ export const WrapCreate = styled.div`
 
 // *******   POST *******
 export const WrapPost = styled.div`
-  /* box-sizing: border-box; */
   display: grid;
-  grid-template-columns: minmax(280px, 1fr);
-  grid-template-rows: 200px 1fr;
+  grid-template-columns: minmax(280px, 780px);
+  grid-template-rows: 1fr;
   justify-content: flex-start;
   align-items: center;
+  gap: 8px;
   background-color: red;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 16px;
   margin: 0 auto;
-  @media screen and (min-width: 767px) {
-    width: 760px;
-  }
 `;
 
 export const WrapImgPost = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(280px, 780px);
+  grid-template-rows: auto;
   justify-content: center;
   align-items: center;
-  /* width: 280px;
-  height: 100%; */
+  border-radius: 10px;
   .img-post {
-    display: block;
-    min-width: 280px;
-    height: auto;
-    background-size: cover;
-    background-position: center;
+    /* display: grid; */
+    border-radius: 12px;
+    justify-self: stretch;
+    align-self: stretch;
+    /* background-size: cover;
+    background-position: center; */
   }
 `;
 
 export const WrapInfo = styled.div`
-  /* box-sizing: border-box; */
   display: grid;
   gap: 8px;
   grid-template-columns: 1fr;
   grid-template-rows: 28px 28px 1fr;
   background-color: aqua;
+  border-radius: 10px;
   padding: 0;
 `;
 

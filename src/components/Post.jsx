@@ -14,7 +14,7 @@ export default function Post({ post }) {
     <WrapPost>
       <WrapImgPost>
         <img
-          src="https://pixabay.com/get/g02a97f31e2b2dd2a1c5c8ead70592368a620fcecf86153cd167614bacc98e98b575bc6711e775dbbf84da9438f608838_640.jpg"
+          src="https://pixabay.com/get/gf6364abc5dd3dbc246ac1b6da0a114d2986ac4a94f6752b748a0b8ce34b6b973d4d6032210375fbdee617d2afdcadc85_640.jpg"
           alt="cat"
           className="img-post"
         />
