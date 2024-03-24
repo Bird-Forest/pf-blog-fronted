@@ -3,9 +3,38 @@ import styled from 'styled-components';
 // *******   CREATE  POST *******
 export const WrapCreate = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 40px;
+  grid-template-columns: minmax(280px, 600px);
+  /* grid-template-rows: 1fr; */
   background-color: blue;
+  padding: 16px;
+  margin: 0 auto;
+`;
+export const WrapForm = styled.div`
+  display: grid;
+  grid-template-columns: minmax(280px, 600px);
+  grid-template-rows: 1fr;
+`;
+export const FormPost = styled.form`
+  display: grid;
+  grid-template-columns: auto-fit, minmax(280px, 600px);
+  grid-template-rows: 40px 40px 40px 1fr 40px;
+  gap: 16px;
+  .input {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    justify-self: stretch;
+    align-self: stretch;
+    padding: 4px 8px;
+  }
+  .wrap-radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+  }
 `;
 
 // *******   POST *******
