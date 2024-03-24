@@ -1,14 +1,23 @@
 import styled from 'styled-components';
-import MainBg from '../img/main-bg.jpg';
+// import MainBg from '../img/main-bg.jpg';
 // import TextureBg from '../img/texture-bg.jpg';
 
 export const Container = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr;
+`;
 
-  background-image: url(${MainBg});
-  background-repeat: repeat;
-  background-position: center;
-  background-size: cover;
+export const WrapHeader = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px;
+  background-color: aqua;
+`;
+
+export const WrapRender = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  background-color: orange;
 `;

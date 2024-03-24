@@ -3,23 +3,27 @@ import styled from 'styled-components';
 // *******   CREATE  POST *******
 export const WrapCreate = styled.div`
   display: grid;
-  grid-template-columns: minmax(280px, 600px);
+  /* grid-template-columns: minmax(280px, 600px); */
   /* grid-template-rows: 1fr; */
   background-color: blue;
   padding: 16px;
   margin: 0 auto;
+  @media screen and (min-width: 767px) {
+    grid-template-columns: 780px;
+  }
 `;
-export const WrapForm = styled.div`
-  display: grid;
-  grid-template-columns: minmax(280px, 600px);
-  grid-template-rows: 1fr;
-`;
+// export const WrapForm = styled.div`
+//   display: grid;
+//   grid-template-columns: minmax(280px, 600px);
+//   grid-template-rows: 1fr;
+// `;
 export const FormPost = styled.form`
   display: grid;
-  grid-template-columns: auto-fit, minmax(280px, 600px);
+  grid-template-columns: minmax(280px, 780px);
   grid-template-rows: 40px 40px 40px 1fr 40px;
   gap: 16px;
   .input {
+    box-sizing: border-box;
     font-size: 16px;
     font-weight: 400;
     border-radius: 4px;
@@ -33,7 +37,12 @@ export const FormPost = styled.form`
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+    font-size: 16px;
     gap: 4px;
+  }
+
+  @media screen and (min-width: 767px) {
+    grid-template-columns: 780px;
   }
 `;
 
@@ -47,6 +56,7 @@ export const WrapPost = styled.div`
   gap: 8px;
   background-color: white;
   border-radius: 10px;
+  border: 1px solid red;
   padding: 16px;
   margin: 0 auto;
   @media screen and (min-width: 767px) {

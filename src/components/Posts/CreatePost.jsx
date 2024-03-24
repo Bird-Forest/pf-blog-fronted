@@ -34,51 +34,51 @@ export default function CreatePost() {
   };
   console.log(post);
   return (
-    <WrapCreate>
-      {/* <WrapForm> */}
-      <FormPost autoComplete="off" onSubmit={handleSubmit}>
-        <input
-          className="input"
-          name="url"
-          type="text"
-          placeholder="Enter URL"
-        />
-        <div className="wrap-radio">
-          <label htmlFor="tags" className="label">
-            <input id="" type="radio" name="tags" value="animals" />
-            animals
-          </label>
-          <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="recipes" />
-            recipes
-          </label>
-          <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="children" />
-            children
-          </label>
-          <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="health" />
-            health
-          </label>
-        </div>
-        <input
-          className="input"
-          name="title"
-          type="text"
-          placeholder="Enter title"
-        />
-        <textarea
-          label=""
-          name="textarea"
-          rows="auto"
-          type="textarea"
-          className="input"
-        />
-        <button type="submit">Subbmit</button>
-      </FormPost>
-      {/* </WrapForm> */}
+    <>
+      <WrapCreate>
+        <FormPost autoComplete="off" onSubmit={handleSubmit}>
+          <input
+            className="input"
+            name="url"
+            type="text"
+            placeholder="Enter URL"
+          />
+          <div className="wrap-radio">
+            <label htmlFor="tags" className="label">
+              <input id="" type="radio" name="tags" value="animals" />
+              animals
+            </label>
+            <label htmlFor="tags" className="label">
+              <input type="radio" name="tags" value="recipes" />
+              recipes
+            </label>
+            <label htmlFor="tags" className="label">
+              <input type="radio" name="tags" value="children" />
+              children
+            </label>
+            <label htmlFor="tags" className="label">
+              <input type="radio" name="tags" value="health" />
+              health
+            </label>
+          </div>
+          <input
+            className="input"
+            name="title"
+            type="text"
+            placeholder="Enter title"
+          />
+          <textarea
+            label=""
+            name="textarea"
+            rows="auto"
+            type="textarea"
+            className="input"
+          />
+          <button type="submit">Subbmit</button>
+        </FormPost>
+      </WrapCreate>
       <Post post={post} />
-    </WrapCreate>
+    </>
   );
 }
 
