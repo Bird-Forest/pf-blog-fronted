@@ -18,7 +18,7 @@ export default function Post({ post }) {
   return (
     <WrapPost>
       <WrapImgPost>
-        <img src={post.img} alt={post.title} className="img-post" />
+        <img src={post.imageUrl} alt={post.title} className="img-post" />
       </WrapImgPost>
       <WrapInfo>
         <WrapTag>

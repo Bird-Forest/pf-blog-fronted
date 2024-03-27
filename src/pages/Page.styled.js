@@ -21,3 +21,11 @@ export const WrapRender = styled.div`
   grid-template-rows: 1fr;
   background-color: orange;
 `;
+
+export const WrapNav = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 36px;
+  justify-content: center;
+  align-items: center;
+`;

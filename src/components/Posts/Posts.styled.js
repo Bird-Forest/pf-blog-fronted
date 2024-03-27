@@ -46,8 +46,15 @@ export const FormPost = styled.form`
   }
 `;
 
+// *******   POST LIST *******
+export const WrapPostsList = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+`;
+
 // *******   POST *******
-export const WrapPost = styled.div`
+export const WrapPost = styled.li`
   display: grid;
   /* grid-template-columns: minmax(280px, 780px); */
   /* grid-template-rows: auto-fit; */
@@ -159,5 +166,20 @@ export const WrapReviews = styled.div`
   .btn-comment {
     width: 60px;
     height: 40px;
+  }
+`;
+
+// *******   EMPTY PAGE *******
+export const WrapEmpty = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: orchid;
+  .icon-empty {
+    width: 100px;
+    height: 100px;
+    fill: blue;
   }
 `;

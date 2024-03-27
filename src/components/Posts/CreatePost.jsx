@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FormPost, WrapCreate } from './Posts.styled';
-import Post from './Post';
+import { useAddPostMutation } from '../../redux/PostsSlice';
+// import Post from './Post';
 
 const tagsList = ['animals', 'recipes', 'children', 'health'];
 // const tag = tagsList[idx];
@@ -13,24 +14,41 @@ console.log(tagsList);
 // };
 // console.log(post);
 
+// https://cdn.pixabay.com/photo/2015/04/23/21/59/tree-736877_640.jpg
+
 export default function CreatePost() {
+  const [addPost] = useAddPostMutation();
   const [post, setPost] = useState({
-    img: '',
+    imageUrl: '',
     tag: '',
     title: '',
-    text: ',',
+    text: '',
   });
-  const handleSubmit = evt => {
+  const handleSubmit = async evt => {
     evt.preventDefault();
     const newUrl = evt.target.url.value;
-    console.log(newUrl);
+    // console.log(newUrl);
     const newTitle = evt.target.title.value;
-    console.log(newTitle);
+    // console.log(newTitle);
     const newTag = evt.target.tags.value;
-    console.log(newTag);
+    // console.log(newTag);
     const newText = evt.target.textarea.value;
-    console.log(newText);
-    setPost({ img: newUrl, tag: newTag, title: newTitle, text: newText });
+    // console.log(newText);
+    setPost({
+      imageUrl: newUrl,
+      tag: newTag,
+      title: newTitle,
+      text: newText,
+    });
+    addPost(post);
+    // try {
+    //   console.log(post);
+    //   await addPost(post);
+    //   // toast.success('Материал добавлен');
+    // } catch (error) {
+    //   // toast.error('Ошибка при добавлении материала');
+    //   console.log(error);
+    // }
   };
   console.log(post);
   return (
@@ -77,7 +95,7 @@ export default function CreatePost() {
           <button type="submit">Subbmit</button>
         </FormPost>
       </WrapCreate>
-      <Post post={post} />
+      {/* <Post post={post} /> */}
     </>
   );
 }
