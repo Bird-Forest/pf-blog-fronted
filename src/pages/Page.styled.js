@@ -3,22 +3,36 @@ import styled from 'styled-components';
 // import TextureBg from '../img/texture-bg.jpg';
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* display: grid; */
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr; */
 `;
 
 export const WrapHeader = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px;
+  grid-template-rows: 60px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
   background-color: aqua;
 `;
 
 export const WrapRender = styled.div`
-  display: grid;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr; */
   background-color: orange;
 `;
 
@@ -26,6 +40,8 @@ export const WrapNav = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 36px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  gap: 20px;
+  padding: 0 8px;
 `;

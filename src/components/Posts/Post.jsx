@@ -3,40 +3,63 @@ import {
   BsFillBookmarkFill,
   BsCircleFill,
   BsHandThumbsUpFill,
+  BsFillChatLeftTextFill,
+  BsSendFill,
+  BsThreeDotsVertical,
 } from 'react-icons/bs';
 import {
-  PostText,
+  BtnIcons,
+  CountLike,
+  ForComment,
+  WrapComment,
   WrapImgPost,
   WrapInfo,
+  WrapMain,
   WrapPost,
   WrapReviews,
   WrapTag,
+  WrapText,
   WrapTitle,
 } from './Posts.styled';
 
 export default function Post({ post }) {
   return (
     <WrapPost>
-      <WrapImgPost>
-        <img src={post.imageUrl} alt={post.title} className="img-post" />
-      </WrapImgPost>
-      <WrapInfo>
-        <WrapTag>
-          <BsFillBookmarkFill className="icon-tag" />
-          <h4 className="post-tag">{post.tag}</h4>
-        </WrapTag>
-        <WrapTitle>
-          <BsCircleFill className="icon-title" />
-          <h3 className="post-title">{post.title}</h3>
-        </WrapTitle>
-        <PostText>{post.text}</PostText>
-      </WrapInfo>
+      <WrapMain>
+        <WrapImgPost>
+          <img src={post.imageUrl} alt={post.title} className="img-post" />
+        </WrapImgPost>
+        <WrapInfo>
+          <WrapTag>
+            <BsFillBookmarkFill className="icon-tag" />
+            <h4 className="post-tag">{post.tag}</h4>
+          </WrapTag>
+          <WrapTitle>
+            <BsCircleFill className="icon-title" />
+            <h3 className="post-title">{post.title}</h3>
+          </WrapTitle>
+        </WrapInfo>
+      </WrapMain>
+      <WrapText>
+        <p>{post.text}</p>
+      </WrapText>
       <WrapReviews>
-        <button type="button" className="btn-like">
-          <BsHandThumbsUpFill className="icon-like" />
-        </button>
-        <span className="counter">{0}</span>
-        <button className="btn-comment">Comment</button>
+        <BtnIcons type="button">
+          <BsHandThumbsUpFill className="icon like" />
+        </BtnIcons>
+        <CountLike>{0}</CountLike>
+        <BtnIcons>
+          <BsFillChatLeftTextFill className="icon coment" />
+        </BtnIcons>
+        <WrapComment>
+          <ForComment />
+          <BtnIcons>
+            <BsSendFill className="icon send" />
+          </BtnIcons>
+        </WrapComment>
+        <BtnIcons>
+          <BsThreeDotsVertical className="icon dots" />
+        </BtnIcons>
       </WrapReviews>
     </WrapPost>
   );
