@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/pf-blog-frontend/static/css/main.256a66f8.css",
-    "main.js": "/pf-blog-frontend/static/js/main.41eaabce.js",
+    "main.css": "/pf-blog-frontend/static/css/main.d33dd536.css",
+    "main.js": "/pf-blog-frontend/static/js/main.18f688a0.js",
+    "static/js/872.40f2c363.chunk.js": "/pf-blog-frontend/static/js/872.40f2c363.chunk.js",
+    "static/js/468.656cb981.chunk.js": "/pf-blog-frontend/static/js/468.656cb981.chunk.js",
+    "static/js/1.2a1ad7f0.chunk.js": "/pf-blog-frontend/static/js/1.2a1ad7f0.chunk.js",
     "index.html": "/pf-blog-frontend/index.html",
-    "main.256a66f8.css.map": "/pf-blog-frontend/static/css/main.256a66f8.css.map",
-    "main.41eaabce.js.map": "/pf-blog-frontend/static/js/main.41eaabce.js.map"
+    "main.d33dd536.css.map": "/pf-blog-frontend/static/css/main.d33dd536.css.map",
+    "main.18f688a0.js.map": "/pf-blog-frontend/static/js/main.18f688a0.js.map",
+    "872.40f2c363.chunk.js.map": "/pf-blog-frontend/static/js/872.40f2c363.chunk.js.map",
+    "468.656cb981.chunk.js.map": "/pf-blog-frontend/static/js/468.656cb981.chunk.js.map",
+    "1.2a1ad7f0.chunk.js.map": "/pf-blog-frontend/static/js/1.2a1ad7f0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.256a66f8.css",
-    "static/js/main.41eaabce.js"
+    "static/css/main.d33dd536.css",
+    "static/js/main.18f688a0.js"
   ]
 }
