@@ -4,14 +4,15 @@ import React, { Suspense, lazy } from 'react';
 import { GlobalStyle } from './GlobalStyle';
 import { Route, Routes } from 'react-router-dom';
 import Loading from 'components/Loading/Loading';
+import { ThemeProvider } from 'styled-components';
+import { base } from './baseTheme';
 
 const Posts = lazy(() => import('./pages/PostsPage'));
 const Create = lazy(() => import('./pages/CreatePage'));
 
 export default function App() {
   return (
-    <>
-      <GlobalStyle />
+    <ThemeProvider theme={base}>
       <Container>
         <AppBar />
         <Suspense fallback={<Loading />}>
@@ -21,6 +22,7 @@ export default function App() {
           </Routes>
         </Suspense>
       </Container>
-    </>
+      <GlobalStyle />
+    </ThemeProvider>
   );
 }

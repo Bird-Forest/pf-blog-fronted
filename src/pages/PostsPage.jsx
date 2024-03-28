@@ -7,11 +7,9 @@ import Loading from 'components/Loading/Loading';
 
 export default function PostsPage() {
   const { data: posts, error, isLoading } = useGetPostsQuery();
+
   return (
     <WrapRender>
-      {/* <button type="button" onClick={() => navigate('/create')}>
-        Добавить материал
-      </button> */}
       {error && (
         <p>
           Ой! Что-то пошло не так : Перезагрузите страницу и попробуйте еще раз.

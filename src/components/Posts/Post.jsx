@@ -14,6 +14,7 @@ import {
   WrapComment,
   WrapImgPost,
   WrapInfo,
+  WrapLikes,
   WrapMain,
   WrapPost,
   WrapReviews,
@@ -21,9 +22,11 @@ import {
   WrapText,
   WrapTitle,
 } from './Posts.styled';
+// import { ThemeProvider } from 'styled-components';
 
 export default function Post({ post }) {
   return (
+    // <ThemeProvider theme={theme}>
     <WrapPost>
       <WrapMain>
         <WrapImgPost>
@@ -44,24 +47,27 @@ export default function Post({ post }) {
         <p>{post.text}</p>
       </WrapText>
       <WrapReviews>
-        <BtnIcons type="button">
-          <BsHandThumbsUpFill className="icon like" />
-        </BtnIcons>
-        <CountLike>{0}</CountLike>
-        <BtnIcons>
-          <BsFillChatLeftTextFill className="icon coment" />
-        </BtnIcons>
+        <WrapLikes>
+          <BtnIcons type="button">
+            <BsHandThumbsUpFill className="icon like" />
+          </BtnIcons>
+          <CountLike>{0}</CountLike>
+          <BtnIcons>
+            <BsFillChatLeftTextFill className="icon coment" />
+          </BtnIcons>
+        </WrapLikes>
         <WrapComment>
           <ForComment />
           <BtnIcons>
             <BsSendFill className="icon send" />
           </BtnIcons>
+          <BtnIcons>
+            <BsThreeDotsVertical className="icon dots" />
+          </BtnIcons>
         </WrapComment>
-        <BtnIcons>
-          <BsThreeDotsVertical className="icon dots" />
-        </BtnIcons>
       </WrapReviews>
     </WrapPost>
+    // </ThemeProvider>
   );
 }
 

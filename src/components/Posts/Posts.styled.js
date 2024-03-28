@@ -1,3 +1,4 @@
+import { base } from 'baseTheme';
 import styled from 'styled-components';
 
 // import cat from 'https://pixabay.com/get/g02a97f31e2b2dd2a1c5c8ead70592368a620fcecf86153cd167614bacc98e98b575bc6711e775dbbf84da9438f608838_640.jpg';
@@ -50,46 +51,43 @@ export const FormPost = styled.form`
 // *******   POST LIST *******
 export const WrapPostsList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
   gap: 8px;
-  padding: 8px;
+  padding: 8px 4px;
   margin: 0 auto;
-
-  /* @media screen and (min-width: 767px) {
-    grid-template-columns: 780px;
-  } */
+  @media screen and (min-width: 480px) {
+    padding: 8px;
+  }
 `;
 
 // *******   POST *******
 export const WrapPost = styled.li`
   display: grid;
-  grid-template-columns: minmax(280px, 1fr);
-  grid-template-rows: auto;
-  justify-content: center;
+  grid-template-columns: minmax(292px, 1fr);
+  /* grid-template-rows: auto; */
+  justify-content: flex-start;
   align-items: center;
   gap: 8px;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid red;
-  padding: 8px 8px 16px 8px;
+  border-radius: 14px;
+  /* border: 2px solid ${props => props.theme.border}; */
+  border: 2px solid red;
+  padding: 8px;
   margin: 0 auto;
+  background-color: ${base.colors.alabaster50};
   @media screen and (min-width: 480px) {
-    grid-template-columns: 462px;
+    grid-template-columns: 460px;
     grid-template-rows: 160px 100px 40px;
   }
-  /* @media screen and (min-width: 767px) {
-    grid-template-columns: 780px;
-  } */
 `;
 
 export const WrapMain = styled.div`
   display: grid;
-  grid-template-columns: minmax(280px, 446px);
+  grid-template-columns: minmax(296px, 444px);
   /* grid-template-rows: auto auto; */
   padding: 0;
   margin: 0;
   @media screen and (min-width: 480px) {
-    grid-template-columns: 240px 214px;
+    grid-template-columns: 240px 212px;
     grid-template-rows: 160px;
     column-gap: 8px;
   }
@@ -130,12 +128,14 @@ export const WrapTag = styled.div`
   .icon-tag {
     width: 20px;
     height: 20px;
+    /* fill: ${props => props.theme.fill}; */
     fill: red;
   }
   .post-tag {
     box-sizing: border-box;
     font-size: 20px;
-    color: #ff1744;
+    /* color: ${props => props.theme.title}; */
+    color: red;
   }
 `;
 export const WrapTitle = styled.div`
@@ -153,14 +153,14 @@ export const WrapTitle = styled.div`
   .post-title {
     box-sizing: border-box;
     font-size: 20px;
-    color: #ff1744;
+    color: red;
     word-wrap: break-word;
     overflow-wrap: anywhere;
   }
 `;
 export const WrapText = styled.div`
   display: grid;
-  grid-template-columns: minmax(280px, 446px);
+  grid-template-columns: minmax(280px, 444px);
   grid-template-rows: 1fr;
   justify-content: flex-start;
   align-items: flex-start;
@@ -173,8 +173,21 @@ export const WrapText = styled.div`
 `;
 export const WrapReviews = styled.div`
   display: grid;
-  grid-template-columns: 40px 40px 40px 272px 20px;
-  gap: 8px;
+  /* grid-template-columns: 40px 1fr 40px; */
+  grid-template-columns: minmax(280px, 444px);
+  grid-template-rows: 40px 40px;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  @media screen and (min-width: 480px) {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 40px;
+  }
+`;
+export const WrapLikes = styled.div`
+  display: grid;
+  grid-template-columns: 36px 36px 36px;
+  gap: 4px;
   justify-content: flex-start;
   align-items: center;
 `;
@@ -189,14 +202,16 @@ export const CountLike = styled.span`
   padding: 4px;
 `;
 export const WrapComment = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 36px 36px;
   justify-content: flex-start;
   align-items: center;
+  gap: 4px;
 `;
 export const ForComment = styled.input`
+  display: grid;
+  grid-template-columns: minmax(200px 1fr);
   border-radius: 8px;
-  width: 272px;
-  height: 36px;
   font-size: 12px;
   padding: 8px 4px;
 `;
