@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { FormPost, WrapCreate } from './Posts.styled';
+import { FormPost, WrapBtn, WrapCreate } from './Posts.styled';
 import { useAddPostMutation } from '../../redux/PostsSlice';
+import Post from './Post';
 // import Post from './Post';
 
 const tagsList = ['animals', 'recipes', 'children', 'health'];
@@ -24,7 +25,7 @@ export default function CreatePost() {
     title: '',
     text: '',
   });
-  const handleSubmit = async evt => {
+  const onPreview = evt => {
     evt.preventDefault();
     const newUrl = evt.target.url.value;
     // console.log(newUrl);
@@ -40,21 +41,25 @@ export default function CreatePost() {
       title: newTitle,
       text: newText,
     });
-    addPost(post);
-    // try {
-    //   console.log(post);
-    //   await addPost(post);
-    //   // toast.success('Материал добавлен');
-    // } catch (error) {
-    //   // toast.error('Ошибка при добавлении материала');
-    //   console.log(error);
-    // }
+    console.log(post);
   };
+
+  const onPublish = () => {
+    console.log(post);
+    addPost(post);
+    setPost({
+      imageUrl: '',
+      tag: '',
+      title: '',
+      text: '',
+    });
+  };
+
   console.log(post);
   return (
     <>
       <WrapCreate>
-        <FormPost autoComplete="off" onSubmit={handleSubmit}>
+        <FormPost autoComplete="off" onSubmit={onPreview}>
           <input
             className="input"
             name="url"
@@ -90,12 +95,17 @@ export default function CreatePost() {
             name="textarea"
             rows="auto"
             type="textarea"
-            className="input"
+            className="textarea"
           />
-          <button type="submit">Subbmit</button>
+          <WrapBtn>
+            <button type="submit">preview</button>
+            <button type="button" onClick={onPublish}>
+              publish
+            </button>
+          </WrapBtn>
         </FormPost>
+        <Post post={post} />
       </WrapCreate>
-      {/* <Post post={post} /> */}
     </>
   );
 }

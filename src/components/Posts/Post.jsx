@@ -11,6 +11,7 @@ import {
   BtnIcons,
   CountLike,
   ForComment,
+  PostText,
   WrapComment,
   WrapImgPost,
   WrapInfo,
@@ -19,7 +20,6 @@ import {
   WrapPost,
   WrapReviews,
   WrapTag,
-  WrapText,
   WrapTitle,
 } from './Posts.styled';
 // import { ThemeProvider } from 'styled-components';
@@ -43,9 +43,10 @@ export default function Post({ post }) {
           </WrapTitle>
         </WrapInfo>
       </WrapMain>
-      <WrapText>
-        <p>{post.text}</p>
-      </WrapText>
+      <PostText>{post.text}</PostText>
+      {/* <WrapText> */}
+
+      {/* </WrapText> */}
       <WrapReviews>
         <WrapLikes>
           <BtnIcons type="button">

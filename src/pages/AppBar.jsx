@@ -12,6 +12,9 @@ export default function AppBar() {
         <NavLink className="navigate" to="create">
           Create
         </NavLink>
+        <NavLink className="navigate" to="edit">
+          Edit
+        </NavLink>
       </WrapNav>
     </WrapHeader>
   );

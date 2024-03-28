@@ -22,14 +22,14 @@ export const WrapHeader = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 8vh;
   background-color: aqua;
 `;
 
 export const WrapRender = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 92vh;
   /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr; */
@@ -38,7 +38,7 @@ export const WrapRender = styled.div`
 
 export const WrapNav = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 36px;
   justify-content: flex-start;
   align-items: center;

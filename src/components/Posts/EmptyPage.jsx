@@ -5,6 +5,7 @@ import { WrapEmpty } from './Posts.styled';
 export default function EmptyPage() {
   return (
     <WrapEmpty>
+      <h2 className="empty-title">There's nothing here yet</h2>
       <GiSherlockHolmes className="icon-empty" />
     </WrapEmpty>
   );
