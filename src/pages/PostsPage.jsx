@@ -3,7 +3,7 @@ import { WrapRender } from './Page.styled';
 import { useGetPostsQuery } from '../redux/PostsSlice';
 // import { Outlet } from 'react-router-dom';
 import PostsList from 'components/Posts/PostsList';
-import Loading from 'components/Loading/Loading';
+import Loading from 'components/Helper/Loading';
 
 export default function PostsPage() {
   const { data: posts, error, isLoading } = useGetPostsQuery();

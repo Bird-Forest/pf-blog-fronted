@@ -3,7 +3,7 @@ import { Container } from 'pages/Page.styled';
 import React, { Suspense, lazy } from 'react';
 import { GlobalStyle } from './GlobalStyle';
 import { Route, Routes } from 'react-router-dom';
-import Loading from 'components/Loading/Loading';
+import Loading from 'components/Helper/Loading';
 import { ThemeProvider } from 'styled-components';
 import { base } from './baseTheme';
 

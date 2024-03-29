@@ -315,7 +315,14 @@ export const WrapEditList = styled.ul`
     padding: 8px;
   }
 `;
-
+export const WrapItem = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+`;
 export const WrapBtnEdit = styled.div`
   display: grid;
   grid-template-columns: minmax(292px, 1fr);
@@ -328,29 +335,5 @@ export const WrapBtnEdit = styled.div`
   @media screen and (min-width: 480px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40px;
-  }
-`;
-
-// *******   EMPTY PAGE *******
-export const WrapEmpty = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  /* background-color: orchid; */
-  padding: 0;
-  background-color: ${base.colors.alabaster200};
-  .empty-title {
-    font-size: clamp(1rem, 0.636rem + 1.82vw, 2rem);
-    color: ${base.colors.alabaster800};
-    font-weight: 500;
-  }
-  .icon-empty {
-    width: 240px;
-    height: 320px;
-    fill: ${base.colors.alabaster400};
   }
 `;

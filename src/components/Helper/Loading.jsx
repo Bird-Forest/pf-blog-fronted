@@ -1,10 +1,10 @@
 import React from 'react';
 import { RotatingLines } from 'react-loader-spinner';
-import { WrapLoad } from './Loading.styled';
+import { WrapLoading } from './Helper.styled';
 
 export default function Loading() {
   return (
-    <WrapLoad>
+    <WrapLoading>
       <RotatingLines
         visible={true}
         height="96"
@@ -16,6 +16,6 @@ export default function Loading() {
         wrapperStyle={{}}
         wrapperClass=""
       />
-    </WrapLoad>
+    </WrapLoading>
   );
 }

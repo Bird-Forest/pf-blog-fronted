@@ -31,6 +31,10 @@ export const postsApi = createApi({
       query: () => '/posts',
       providesTags: ['Posts'],
     }),
+    getPostById: builder.query({
+      query: id => `/posts/${id}`,
+      providesTags: ['Posts'],
+    }),
     addPost: builder.mutation({
       query: post => ({
         url: '/posts',
@@ -39,9 +43,30 @@ export const postsApi = createApi({
       }),
       invalidatesTags: ['Posts'],
     }),
+    deletePost: builder.mutation({
+      query: id => ({
+        url: `/posts/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['Posts'],
+    }),
+    updatePost: builder.mutation({
+      query: fields => ({
+        url: `/posts/${fields.id}`,
+        method: 'PUT',
+        body: fields,
+      }),
+      invalidatesTags: ['Posts'],
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostsQuery, useAddPostMutation } = postsApi;
+export const {
+  useGetPostsQuery,
+  useAddPostMutation,
+  useGetPostByIdQuery,
+  useDeletePostMutation,
+  useUpdatePostMutation,
+} = postsApi;

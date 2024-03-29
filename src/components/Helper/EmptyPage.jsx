@@ -1,6 +1,6 @@
 import React from 'react';
 import { GiSherlockHolmes } from 'react-icons/gi';
-import { WrapEmpty } from './Posts.styled';
+import { WrapEmpty } from './Helper.styled';
 
 export default function EmptyPage() {
   return (

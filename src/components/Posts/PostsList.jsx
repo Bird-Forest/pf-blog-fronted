@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post';
 import { WrapPostsList } from './Posts.styled';
-import EmptyPage from './EmptyPage';
+import EmptyPage from '../Helper/EmptyPage';
 // import { base } from 'baseTheme';
 
 export default function PostsList({ posts, ...otherProps }) {

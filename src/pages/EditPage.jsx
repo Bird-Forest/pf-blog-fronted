@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from 'components/Loading/Loading';
+import Loading from 'components/Helper/Loading';
 import { WrapRender } from './Page.styled';
 import { useGetPostsQuery } from '../redux/PostsSlice';
 import EditListOfPosts from 'components/Posts/EditListOfPosts';
