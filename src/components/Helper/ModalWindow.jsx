@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { BtnClose, WrapLoading, WrapModal } from './Helper.styled';
-import { IoCloseSharp } from 'react-icons/io5';
+import { WrapLoading, WrapModal } from './Helper.styled';
+// import { IoCloseSharp } from 'react-icons/io5';
 
 export default function ModalWindow({ onClose, content }) {
   useEffect(() => {
@@ -20,9 +20,9 @@ export default function ModalWindow({ onClose, content }) {
   return (
     <WrapLoading onClick={onClose}>
       <WrapModal onClick={e => e.stopPropagation()}>
-        <BtnClose onClick={onClose}>
+        {/* <BtnClose onClick={onClose}>
           <IoCloseSharp className="close" />
-        </BtnClose>
+        </BtnClose> */}
         {content}
       </WrapModal>
     </WrapLoading>

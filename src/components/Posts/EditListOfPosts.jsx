@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   WrapBtnEdit,
   WrapEditList,
@@ -7,20 +7,40 @@ import {
 import Post from 'components/Posts/Post';
 import EmptyPage from 'components/Helper/EmptyPage';
 import { nanoid } from '@reduxjs/toolkit';
-import { useDeletePostMutation } from '../../redux/PostsSlice';
+import {
+  useDeletePostMutation,
+  useGetPostByIdQuery,
+  useUpdatePostMutation,
+} from '../../redux/PostsSlice';
+import { createPortal } from 'react-dom';
+import ModalWindow from '../Helper/ModalWindow';
+import EditPost from './EditPost';
 
 export default function EditListOfPosts({ posts }) {
+  const [id, setId] = useState('');
+  const [showModal, setShowModal] = useState(false);
+
+  const { data } = useGetPostByIdQuery(id);
+  const [updatePost] = useUpdatePostMutation();
   const [deletePost] = useDeletePostMutation();
-  // const [showModal, setShowModal] = useState(false);
+
+  const onEdit = evt => {
+    const id = evt.target.name;
+    setId(id);
+    setShowModal(true);
+  };
+
+  const onUpdatePost = (id, post) => {
+    // console.log('POST', post);
+    // console.log('ID', id);
+    updatePost({ id, post });
+  };
 
   const onDelete = evt => {
-    // console.log(evt.target.name);
     const id = evt.target.name;
     deletePost(id);
   };
-  const onEdit = evt => {
-    console.log(evt.target.name);
-  };
+
   const Arr = Array.isArray(posts) && posts.length > 0;
   return (
     <WrapEditList>
@@ -32,6 +52,16 @@ export default function EditListOfPosts({ posts }) {
               <button key={nanoid()} name={post._id} onClick={onEdit}>
                 edit
               </button>
+              {showModal &&
+                createPortal(
+                  <ModalWindow
+                    onClose={() => setShowModal(false)}
+                    content={
+                      <EditPost data={data} onUpdatePost={onUpdatePost} />
+                    }
+                  />,
+                  document.body
+                )}
               <button key={nanoid()} name={post._id} onClick={onDelete}>
                 delete
               </button>

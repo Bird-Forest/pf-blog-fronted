@@ -2,6 +2,7 @@ import { base } from 'baseTheme';
 import styled from 'styled-components';
 
 // *******   CREATE  POST *******
+
 export const WrapCreate = styled.div`
   display: grid;
   grid-template-columns: minmax(292px, 1fr);
@@ -14,6 +15,7 @@ export const WrapCreate = styled.div`
     padding: 8px;
   }
 `;
+
 export const FormPost = styled.form`
   display: grid;
   grid-template-columns: minmax(292px, 1fr);
@@ -52,15 +54,13 @@ export const FormPost = styled.form`
     font-weight: 400;
     border-radius: 4px;
     border: 1px solid #bdbdbd;
-    /* outline-color: #bdbdbd;
-    justify-self: stretch;
-    align-self: stretch; */
     resize: vertical;
   }
   @media screen and (min-width: 480px) {
     grid-template-columns: 460px;
   }
 `;
+
 export const WrapBtn = styled.div`
   display: grid;
   grid-template-columns: minmax(292px, 1fr);
@@ -77,6 +77,7 @@ export const WrapBtn = styled.div`
 `;
 
 // *******   POST LIST *******
+
 export const WrapPostsList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
@@ -336,4 +337,53 @@ export const WrapBtnEdit = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40px;
   }
+`;
+
+export const WrapEditPost = styled.div`
+  display: grid;
+  grid-template-columns: minmax(292px, 1fr);
+  grid-template-rows: 40px 40px 40px auto 88px;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 14px;
+  gap: 16px;
+  background-color: ${base.colors.alabaster50};
+  padding: 8px;
+  margin: 0 auto;
+  .input {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    justify-self: stretch;
+    align-self: stretch;
+    padding: 4px 8px;
+  }
+  .wrap-radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    gap: 8px;
+  }
+  .textarea {
+    display: grid;
+    grid-template-columns: minmax(256px 444px);
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    resize: vertical;
+  }
+  @media screen and (min-width: 480px) {
+    grid-template-columns: 460px;
+  }
+`;
+export const BtnSave = styled.button`
+  display: grid;
+  cursor: pointer;
 `;
