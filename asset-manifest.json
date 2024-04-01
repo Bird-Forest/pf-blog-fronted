@@ -1,25 +1,23 @@
 {
   "files": {
     "main.css": "/pf-blog-frontend/static/css/main.d33dd536.css",
-    "main.js": "/pf-blog-frontend/static/js/main.d5ab9451.js",
-    "static/js/271.4e801999.chunk.js": "/pf-blog-frontend/static/js/271.4e801999.chunk.js",
-    "static/js/119.55e8ab4f.chunk.js": "/pf-blog-frontend/static/js/119.55e8ab4f.chunk.js",
-    "static/js/821.4b02c71d.chunk.js": "/pf-blog-frontend/static/js/821.4b02c71d.chunk.js",
+    "main.js": "/pf-blog-frontend/static/js/main.1a74b9b3.js",
+    "static/js/271.5542fc08.chunk.js": "/pf-blog-frontend/static/js/271.5542fc08.chunk.js",
+    "static/js/468.448342dc.chunk.js": "/pf-blog-frontend/static/js/468.448342dc.chunk.js",
+    "static/js/882.6a3c4991.chunk.js": "/pf-blog-frontend/static/js/882.6a3c4991.chunk.js",
     "static/js/804.5792747c.chunk.js": "/pf-blog-frontend/static/js/804.5792747c.chunk.js",
     "static/js/540.89fa7fc8.chunk.js": "/pf-blog-frontend/static/js/540.89fa7fc8.chunk.js",
-    "static/js/187.02ea500c.chunk.js": "/pf-blog-frontend/static/js/187.02ea500c.chunk.js",
     "index.html": "/pf-blog-frontend/index.html",
     "main.d33dd536.css.map": "/pf-blog-frontend/static/css/main.d33dd536.css.map",
-    "main.d5ab9451.js.map": "/pf-blog-frontend/static/js/main.d5ab9451.js.map",
-    "271.4e801999.chunk.js.map": "/pf-blog-frontend/static/js/271.4e801999.chunk.js.map",
-    "119.55e8ab4f.chunk.js.map": "/pf-blog-frontend/static/js/119.55e8ab4f.chunk.js.map",
-    "821.4b02c71d.chunk.js.map": "/pf-blog-frontend/static/js/821.4b02c71d.chunk.js.map",
+    "main.1a74b9b3.js.map": "/pf-blog-frontend/static/js/main.1a74b9b3.js.map",
+    "271.5542fc08.chunk.js.map": "/pf-blog-frontend/static/js/271.5542fc08.chunk.js.map",
+    "468.448342dc.chunk.js.map": "/pf-blog-frontend/static/js/468.448342dc.chunk.js.map",
+    "882.6a3c4991.chunk.js.map": "/pf-blog-frontend/static/js/882.6a3c4991.chunk.js.map",
     "804.5792747c.chunk.js.map": "/pf-blog-frontend/static/js/804.5792747c.chunk.js.map",
-    "540.89fa7fc8.chunk.js.map": "/pf-blog-frontend/static/js/540.89fa7fc8.chunk.js.map",
-    "187.02ea500c.chunk.js.map": "/pf-blog-frontend/static/js/187.02ea500c.chunk.js.map"
+    "540.89fa7fc8.chunk.js.map": "/pf-blog-frontend/static/js/540.89fa7fc8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d33dd536.css",
-    "static/js/main.d5ab9451.js"
+    "static/js/main.1a74b9b3.js"
   ]
 }
