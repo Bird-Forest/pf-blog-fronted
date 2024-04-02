@@ -49,27 +49,42 @@ export default function EditListOfPosts({ posts }) {
           <WrapItem key={nanoid()}>
             <Post key={nanoid()} post={post} />
             <WrapBtnEdit key={nanoid()}>
-              <button key={nanoid()} name={post._id} onClick={onEdit}>
+              <button
+                key={nanoid()}
+                name={post._id}
+                onClick={onEdit}
+                className="btn"
+              >
                 edit
               </button>
               {showModal &&
                 createPortal(
                   <ModalWindow
+                    key={nanoid()}
                     onClose={() => setShowModal(false)}
                     content={
-                      <EditPost data={data} onUpdatePost={onUpdatePost} />
+                      <EditPost
+                        key={nanoid()}
+                        data={data}
+                        onUpdatePost={onUpdatePost}
+                      />
                     }
                   />,
                   document.body
                 )}
-              <button key={nanoid()} name={post._id} onClick={onDelete}>
+              <button
+                key={nanoid()}
+                name={post._id}
+                onClick={onDelete}
+                className="btn"
+              >
                 delete
               </button>
             </WrapBtnEdit>
           </WrapItem>
         ))
       ) : (
-        <EmptyPage />
+        <EmptyPage message={"There's nothing here yet"} />
       )}
     </WrapEditList>
   );

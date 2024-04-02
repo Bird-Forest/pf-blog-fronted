@@ -41,22 +41,23 @@ export default function CreatePost() {
           name="url"
           type="text"
           placeholder="Enter URL"
+          required
         />
         <div className="wrap-radio">
           <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="animals" />
+            <input type="radio" name="tags" value="animals" required />
             animals
           </label>
           <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="hobby" />
+            <input type="radio" name="tags" value="hobby" required />
             hobby
           </label>
           <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="children" />
+            <input type="radio" name="tags" value="children" required />
             children
           </label>
           <label htmlFor="tags" className="label">
-            <input type="radio" name="tags" value="health" />
+            <input type="radio" name="tags" value="health" required />
             health
           </label>
         </div>
@@ -65,15 +66,20 @@ export default function CreatePost() {
           name="title"
           type="text"
           placeholder="Enter title"
+          required
         />
         <textarea
           name="text"
           rows="auto"
           type="textarea"
           className="textarea"
+          placeholder="Enter text"
+          required
         />
         <WrapBtn>
-          <button type="submit">preview</button>
+          <button type="submit" className="btn">
+            preview
+          </button>
           {showModal &&
             createPortal(
               <ModalWindow
@@ -82,7 +88,7 @@ export default function CreatePost() {
               />,
               document.body
             )}
-          <button type="button" onClick={onPublish}>
+          <button type="button" onClick={onPublish} className="btn">
             publish
           </button>
         </WrapBtn>

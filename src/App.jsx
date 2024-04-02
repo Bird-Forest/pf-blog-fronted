@@ -18,7 +18,7 @@ export default function App() {
         <AppBar />
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/posts" element={<Posts />} />
+            <Route path="/" element={<Posts />} />
             <Route path="/create" element={<Create />} />
             <Route path="/edit" element={<Edit />} />
           </Routes>

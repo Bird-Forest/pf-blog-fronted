@@ -1,22 +1,21 @@
 import React from 'react';
 import { WrapRender } from './Page.styled';
 import { useGetPostsQuery } from '../redux/PostsSlice';
-// import { Outlet } from 'react-router-dom';
 import PostsList from 'components/Posts/PostsList';
-import Loading from 'components/Helper/Loading';
+import EmptyPage from 'components/Helper/EmptyPage';
 
 export default function PostsPage() {
-  const { data: posts, error, isLoading } = useGetPostsQuery();
+  const { data: posts, error } = useGetPostsQuery();
 
   return (
     <WrapRender>
-      {error && (
-        <p>
-          Ой! Что-то пошло не так : Перезагрузите страницу и попробуйте еще раз.
-        </p>
+      {error ? (
+        <EmptyPage
+          message={'The service is temporarily unavailable. Try later'}
+        />
+      ) : (
+        <PostsList posts={posts} />
       )}
-      {isLoading ? <Loading /> : <PostsList posts={posts} />}
-      {/* <Outlet /> */}
     </WrapRender>
   );
 }

@@ -26,72 +26,70 @@ export default function EditPost({ data, onUpdatePost }) {
   };
 
   return (
-    <div>
-      <WrapEditPost autoComplete="off">
-        <input
-          className="input"
-          name="imageUrl"
-          type="text"
-          value={post.imageUrl}
-          onChange={e => onChangeField('imageUrl', e.target.value)}
-        />
-        <div className="wrap-radio">
-          <label htmlFor="tags" className="label">
-            <input
-              type="radio"
-              name="tag"
-              value="animals"
-              onChange={e => onChangeField('tag', e.target.value)}
-            />
-            animals
-          </label>
-          <label htmlFor="tags" className="label">
-            <input
-              type="radio"
-              name="tag"
-              value="hobby"
-              onChange={e => onChangeField('tag', e.target.value)}
-            />
-            hobby
-          </label>
-          <label htmlFor="tags" className="label">
-            <input
-              type="radio"
-              name="tag"
-              value="children"
-              onChange={e => onChangeField('tag', e.target.value)}
-            />
-            children
-          </label>
-          <label htmlFor="tags" className="label">
-            <input
-              type="radio"
-              name="tag"
-              value="health"
-              onChange={e => onChangeField('tag', e.target.value)}
-            />
-            health
-          </label>
-        </div>
-        <input
-          className="input"
-          name="title"
-          type="text"
-          value={post.title}
-          onChange={e => onChangeField('title', e.target.value)}
-        />
-        <textarea
-          name="text"
-          rows="auto"
-          type="textarea"
-          className="textarea"
-          value={post.text}
-          onChange={e => onChangeField('text', e.target.value)}
-        />
-        <BtnSave type="button" onClick={handleUpdate}>
-          update post
-        </BtnSave>
-      </WrapEditPost>
-    </div>
+    <WrapEditPost autoComplete="off">
+      <input
+        className="input"
+        name="imageUrl"
+        type="text"
+        value={post.imageUrl}
+        onChange={e => onChangeField('imageUrl', e.target.value)}
+      />
+      <div className="wrap-radio">
+        <label htmlFor="tags" className="label">
+          <input
+            type="radio"
+            name="tag"
+            value="animals"
+            onChange={e => onChangeField('tag', e.target.value)}
+          />
+          animals
+        </label>
+        <label htmlFor="tags" className="label">
+          <input
+            type="radio"
+            name="tag"
+            value="hobby"
+            onChange={e => onChangeField('tag', e.target.value)}
+          />
+          hobby
+        </label>
+        <label htmlFor="tags" className="label">
+          <input
+            type="radio"
+            name="tag"
+            value="children"
+            onChange={e => onChangeField('tag', e.target.value)}
+          />
+          children
+        </label>
+        <label htmlFor="tags" className="label">
+          <input
+            type="radio"
+            name="tag"
+            value="health"
+            onChange={e => onChangeField('tag', e.target.value)}
+          />
+          health
+        </label>
+      </div>
+      <input
+        className="input"
+        name="title"
+        type="text"
+        value={post.title}
+        onChange={e => onChangeField('title', e.target.value)}
+      />
+      <textarea
+        name="text"
+        rows="auto"
+        type="textarea"
+        className="textarea"
+        value={post.text}
+        onChange={e => onChangeField('text', e.target.value)}
+      />
+      <BtnSave type="button" onClick={handleUpdate}>
+        update post
+      </BtnSave>
+    </WrapEditPost>
   );
 }

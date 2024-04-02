@@ -6,7 +6,7 @@ export default function AppBar() {
   return (
     <WrapHeader>
       <WrapNav>
-        <NavLink className="navigate" to="posts">
+        <NavLink className="navigate" to="/">
           Posts
         </NavLink>
         <NavLink className="navigate" to="create">
