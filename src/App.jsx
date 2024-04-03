@@ -1,4 +1,4 @@
-import AppBar from 'pages/AppBar';
+import AppBar from 'x_files/AppBar';
 import { Container } from 'pages/Page.styled';
 import React, { Suspense, lazy } from 'react';
 import { GlobalStyle } from './GlobalStyle';
@@ -7,9 +7,10 @@ import Loading from 'components/Helper/Loading';
 import { ThemeProvider } from 'styled-components';
 import { base } from './baseTheme';
 
-const Posts = lazy(() => import('./pages/PostsPage'));
-const Create = lazy(() => import('./pages/CreatePage'));
-const Edit = lazy(() => import('./pages/EditPage'));
+const PostsPage = lazy(() => import('./pages/PostsPage'));
+const CreatePage = lazy(() => import('./pages/CreatePage'));
+const UserPage = lazy(() => import('./pages/UserPage'));
+const UserPost = lazy(() => import('./components/Posts/UserPost'));
 
 export default function App() {
   return (
@@ -18,9 +19,10 @@ export default function App() {
         <AppBar />
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<Posts />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/edit" element={<Edit />} />
+            <Route path="/" element={<PostsPage />} />
+            <Route path="/create" element={<CreatePage />} />
+            <Route path="/user-posts" element={<UserPage />} />
+            <Route path="/user-posts/:id" element={<UserPost />} />
           </Routes>
         </Suspense>
       </Container>

@@ -28,16 +28,34 @@ import {
 } from './Posts.styled';
 
 export default function Post({ post }) {
+  const date = new Date(post.createdAt);
+  const formattedDate = new Intl.DateTimeFormat('en-US', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  })
+    .format(date)
+    .replace(/\//g, '.');
+
+  // console.log(formattedDate);
+
+  const onChangeLikes = evt => {
+    const id = evt.currentTarget.name;
+    console.log(id);
+    let count = post.viewsCount + 1;
+    console.log(count);
+  };
+
   return (
     <WrapUserPost>
       <WrapUser>
         <div className="bgr">
           <WrapAvatar>R</WrapAvatar>
           <UserName>Tom Fisher</UserName>
-          <BtnIcons type="button">
+          <BtnIcons name={post._id} type="button" onClick={onChangeLikes}>
             <BsHandThumbsUpFill className="icon like" />
           </BtnIcons>
-          <CountLike>{123}</CountLike>
+          <CountLike>{post.viewsCount}</CountLike>
         </div>
       </WrapUser>
       <WrapPost>
@@ -47,8 +65,11 @@ export default function Post({ post }) {
           </WrapImgPost>
           <WrapInfo>
             <WrapTag>
-              <BsFillBookmarkFill className="icon-tag" />
-              <h4 className="post-tag">{post.tag}</h4>
+              <div className="tags">
+                <BsFillBookmarkFill className="icon-tag" />
+                <h4 className="post-tag">{post.tag}</h4>
+              </div>
+              <p className="date">{formattedDate}</p>
             </WrapTag>
             <WrapTitle>
               <BsCircleFill className="icon-title" />

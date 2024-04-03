@@ -1,4 +1,5 @@
 import { base } from 'baseTheme';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // *******   CREATE  POST *******
@@ -117,7 +118,7 @@ export const WrapBtn = styled.div`
 
 export const WrapPostsList = styled.ul`
   display: grid;
-  gap: 8px;
+  gap: 16px;
   grid-template-columns: minmax(312px, 1fr);
   padding: 8px 4px;
   margin: 0 auto;
@@ -133,7 +134,7 @@ export const WrapUserPost = styled.li`
   display: grid;
   grid-template-columns: minmax(292px, auto);
   grid-template-rows: auto auto;
-  gap: 8px;
+  gap: 4px;
   padding: 0;
   margin: 0;
 `;
@@ -232,11 +233,18 @@ export const WrapInfo = styled.div`
 `;
 export const WrapTag = styled.div`
   display: grid;
-  grid-template-columns: 20px 1fr;
-  justify-content: flex-start;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
   align-items: center;
   column-gap: 8px;
   padding: 0;
+  .tags {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
   .icon-tag {
     width: 16px;
     height: 16px;
@@ -244,9 +252,16 @@ export const WrapTag = styled.div`
   }
   .post-tag {
     box-sizing: border-box;
-    font-size: clamp(12px, 0.614rem + 0.68vw, 18px);
+    font-size: clamp(16px, 0.955rem + 0.23vw, 18px);
     font-weight: 700;
     color: ${base.colors.comment};
+  }
+  .date {
+    box-sizing: border-box;
+    font-size: clamp(12px, 0.705rem + 0.23vw, 14px);
+    font-weight: 400;
+    text-align: end;
+    color: ${base.colors.green900};
   }
 `;
 export const WrapTitle = styled.div`
@@ -322,8 +337,8 @@ export const ForComment = styled.input`
   border-radius: 8px;
   border: 1px solid white;
   outline: none;
-  font-size: 12px;
-  padding: 8px 4px;
+  font-size: 16px;
+  padding: 6px 8px;
 `;
 export const BtnIcons = styled.button`
   display: flex;
@@ -353,15 +368,36 @@ export const BtnIcons = styled.button`
   }
 `;
 
-// *******   EDIT PAGE *******
-export const WrapEditList = styled.ul`
+// *******   USER PAGE *******
+export const WrapUserList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
-  gap: 8px;
+  gap: 16px;
   padding: 8px 4px;
   margin: 0 auto;
   @media screen and (min-width: 480px) {
     padding: 8px;
+  }
+`;
+export const WrapLink = styled(Link)`
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+`;
+
+// *******   USER POST  *******
+export const WrapPostId = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 40px 40px;
+  gap: 16px;
+  padding: 8px 0;
+  margin: 0 auto;
+  .message {
+    font-size: clamp(16px, 0.909rem + 0.45vw, 20px);
+    font-weight: 500;
+    color: ${base.colors.green900};
+    padding: 0 4px 8px 4px;
   }
 `;
 export const WrapItem = styled.div`
@@ -372,35 +408,72 @@ export const WrapItem = styled.div`
   padding: 0;
   margin: 0;
 `;
-export const WrapBtnEdit = styled.div`
-  display: grid;
-  grid-template-columns: minmax(292px, 1fr);
-  grid-template-rows: 40px 40px;
-  gap: 8px;
-  .btn {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: ${base.colors.green500};
-    transition: all 0.3s;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    &:hover,
-    :focus {
-      background-color: ${base.colors.green700};
-    }
-  }
-  @media screen and (min-width: 480px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40px;
+// export const WrapBtnEdit = styled.div`
+//   display: grid;
+//   grid-template-columns: minmax(292px, 1fr);
+//   grid-template-rows: 40px 40px;
+//   gap: 8px;
+//   .btn {
+//     box-sizing: border-box;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 16px;
+//     font-weight: 600;
+//     color: #ffffff;
+//     background-color: ${base.colors.green500};
+//     transition: all 0.3s;
+//     border: none;
+//     border-radius: 20px;
+//     cursor: pointer;
+//     &:hover,
+//     :focus {
+//       background-color: ${base.colors.green700};
+//     }
+//   }
+//   @media screen and (min-width: 480px) {
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 40px;
+//   }
+// `;
+export const BackLink = styled(Link)`
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: ${base.colors.green100};
+  transition: all 0.3s;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover,
+  :focus {
+    background-color: ${base.colors.green200};
   }
 `;
-
+// export const BtnUserPost = styled.button`
+//   box-sizing: border-box;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 16px;
+//   font-weight: 600;
+//   color: #ffffff;
+//   background-color: ${base.colors.green500};
+//   transition: all 0.3s;
+//   border: none;
+//   border-radius: 20px;
+//   cursor: pointer;
+//   &:hover,
+//   :focus {
+//     background-color: ${base.colors.green700};
+//   }
+// `;
+// *******   USER POST EDIT *******
 export const WrapEditPost = styled.div`
   display: grid;
   grid-template-columns: minmax(292px, 1fr);

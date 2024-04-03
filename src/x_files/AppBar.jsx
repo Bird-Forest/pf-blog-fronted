@@ -1,6 +1,7 @@
 import React from 'react';
-import { WrapHeader, WrapNav } from './Page.styled';
+import { WrapHeader } from '../pages/Page.styled';
 import { NavLink } from 'react-router-dom';
+import { WrapNav } from './Navigate.styled';
 
 export default function AppBar() {
   return (
@@ -9,11 +10,11 @@ export default function AppBar() {
         <NavLink className="navigate" to="/">
           Posts
         </NavLink>
-        <NavLink className="navigate" to="create">
+        <NavLink className="navigate" to="/create">
           Create
         </NavLink>
-        <NavLink className="navigate" to="edit">
-          Edit
+        <NavLink className="navigate" to="/user-posts">
+          My posts
         </NavLink>
       </WrapNav>
     </WrapHeader>

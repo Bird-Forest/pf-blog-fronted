@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { BtnSave, WrapEditPost } from './Posts.styled';
+// import { useParams } from 'react-router-dom';
 
 export default function EditPost({ data, onUpdatePost }) {
   const id = data._id;

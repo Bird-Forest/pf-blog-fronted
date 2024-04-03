@@ -28,23 +28,13 @@ export const WrapHeader = styled.div`
   border-bottom: 1px solid #43a047;
 `;
 
-export const WrapRender = styled.div`
+export const WrapRender = styled.main`
   display: flex;
   width: 100%;
-  height: max-content;
+  /* height: 92vh; */
+  max-height: max-content;
   /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr; */
   background-color: #6fbf73;
-`;
-
-export const WrapNav = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 36px;
-  justify-content: flex-start;
-  align-items: center;
-  color: #357a38;
-  gap: 20px;
-  padding: 0 8px;
 `;
