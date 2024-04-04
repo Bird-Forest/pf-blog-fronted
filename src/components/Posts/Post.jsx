@@ -26,6 +26,7 @@ import {
   WrapUser,
   WrapUserPost,
 } from './Posts.styled';
+import { useUpdateLikesMutation } from '../../redux/PostsSlice';
 
 export default function Post({ post }) {
   const date = new Date(post.createdAt);
@@ -36,14 +37,15 @@ export default function Post({ post }) {
   })
     .format(date)
     .replace(/\//g, '.');
-
   // console.log(formattedDate);
+  const [updateLikes] = useUpdateLikesMutation();
 
-  const onChangeLikes = evt => {
+  const onAddLike = evt => {
     const id = evt.currentTarget.name;
     console.log(id);
-    let count = post.viewsCount + 1;
+    let count = { viewsCount: Number(post.viewsCount + 1) };
     console.log(count);
+    updateLikes({ id, count });
   };
 
   return (
@@ -52,7 +54,7 @@ export default function Post({ post }) {
         <div className="bgr">
           <WrapAvatar>R</WrapAvatar>
           <UserName>Tom Fisher</UserName>
-          <BtnIcons name={post._id} type="button" onClick={onChangeLikes}>
+          <BtnIcons name={post._id} type="button" onClick={onAddLike}>
             <BsHandThumbsUpFill className="icon like" />
           </BtnIcons>
           <CountLike>{post.viewsCount}</CountLike>

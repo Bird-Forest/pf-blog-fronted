@@ -122,7 +122,7 @@ export const WrapPostsList = styled.ul`
   grid-template-columns: minmax(312px, 1fr);
   padding: 8px 4px;
   margin: 0 auto;
-  @media screen and (min-width: 920px) {
+  @media screen and (min-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
     padding: 8px;
     grid-template-rows: auto;
