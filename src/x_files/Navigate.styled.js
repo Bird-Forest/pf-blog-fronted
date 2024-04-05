@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { base } from 'baseTheme';
 
-export const WrapNav = styled.div`
+export const WrapNav = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 36px;
-  justify-content: flex-start;
+  grid-template-rows: 1fr;
+  justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 0 8px;
+  padding: 0;
   .navigate {
     font-size: clamp(16px, 0.909rem + 0.45vw, 20px);
     font-weight: 600;

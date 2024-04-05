@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { WrapBtn, WrapEditPost } from './Posts.styled';
+import { useUpdatePostMutation } from '../../redux/PostsSlice';
+import NotifPositive from 'components/Helper/NotifPositive';
+import NotifNegative from 'components/Helper/NotifNegative';
 
-import { BtnSave, WrapEditPost } from './Posts.styled';
-// import { useParams } from 'react-router-dom';
-
-export default function EditPost({ data, onUpdatePost }) {
+export default function EditPost({ data }) {
   const id = data._id;
   const fields = {
     imageUrl: data.imageUrl,
@@ -12,7 +13,9 @@ export default function EditPost({ data, onUpdatePost }) {
     text: data.text,
   };
 
+  const [isShow, setIsShow] = useState(false);
   const [post, setPost] = useState(fields);
+  const [updatePost, { isError, isSuccess }] = useUpdatePostMutation();
 
   const onChangeField = (field, value) => {
     setPost(prevState => ({
@@ -22,9 +25,25 @@ export default function EditPost({ data, onUpdatePost }) {
   };
 
   const handleUpdate = () => {
-    onUpdatePost(id, post);
+    // onUpdatePost(id, post);
     // console.log('handleUpdate', post);
+    updatePost({ id, post });
+    setIsShow(true);
   };
+
+  const onReset = () => {
+    setPost({
+      imageUrl: '',
+      tag: '',
+      title: '',
+      text: '',
+    });
+  };
+
+  const showSuccess = isShow && isSuccess;
+  const showError = isShow && isError;
+  // console.log(showSuccess);
+  // console.log(showError);
 
   return (
     <WrapEditPost autoComplete="off">
@@ -88,9 +107,26 @@ export default function EditPost({ data, onUpdatePost }) {
         value={post.text}
         onChange={e => onChangeField('text', e.target.value)}
       />
-      <BtnSave type="button" onClick={handleUpdate}>
-        update post
-      </BtnSave>
+      <WrapBtn>
+        <button type="submit" className="btn" onClick={onReset}>
+          reset
+        </button>
+        <button type="button" className="btn" onClick={handleUpdate}>
+          update post
+        </button>
+      </WrapBtn>
+      {showSuccess && (
+        <NotifPositive
+          message={'List of posts updated'}
+          onClose={() => setIsShow(false)}
+        />
+      )}
+      {showError && (
+        <NotifNegative
+          message={'Please, try again later'}
+          onClose={() => setIsShow(false)}
+        />
+      )}
     </WrapEditPost>
   );
 }

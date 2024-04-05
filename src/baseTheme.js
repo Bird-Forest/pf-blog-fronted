@@ -4,7 +4,8 @@ export const base = {
   },
   colors: {
     like: '#ffd740',
-    comment: '#ffc107',
+    yellow: '#ffc107',
+    ground: '#6fbf73',
     green50: '#e8f5e9',
     green100: '#c8e6c9',
     green200: '#a5d6a7',

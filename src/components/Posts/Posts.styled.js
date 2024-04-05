@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // *******   CREATE  POST *******
-
 export const WrapCreate = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: minmax(292px, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 74px;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   padding: 8px 4px;
   margin: 0 auto;
   @media screen and (min-width: 480px) {
-    padding: 8px;
+    padding: 16px 8px;
   }
 `;
 
@@ -20,7 +22,7 @@ export const FormPost = styled.form`
   display: grid;
   grid-template-columns: minmax(292px, 1fr);
   grid-template-rows: 40px 40px 40px 1fr 88px;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   border: 2px solid ${base.colors.green300};
   border-radius: 14px;
@@ -56,7 +58,7 @@ export const FormPost = styled.form`
   .label {
     display: grid;
     grid-template-columns: 12px 1fr;
-    justify-content: flex-start;
+    justify-content: start;
     align-items: center;
     gap: 4px;
     font-size: 16px;
@@ -102,6 +104,7 @@ export const WrapBtn = styled.div`
     transition: all 0.3s;
     border: none;
     border-radius: 20px;
+    text-decoration: none;
     cursor: pointer;
     &:hover,
     :focus {
@@ -115,43 +118,45 @@ export const WrapBtn = styled.div`
 `;
 
 // *******   POST LIST *******
-
 export const WrapPostsList = styled.ul`
   display: grid;
-  gap: 16px;
   grid-template-columns: minmax(312px, 1fr);
+  grid-template-rows: 1fr;
+  gap: 16px;
   padding: 8px 4px;
   margin: 0 auto;
+  @media screen and (min-width: 480px) {
+    padding: 8px;
+  }
   @media screen and (min-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
-    padding: 8px;
-    grid-template-rows: auto;
+    padding: 16px;
   }
 `;
 
 // *******   POST *******
 export const WrapUserPost = styled.li`
   display: grid;
-  grid-template-columns: minmax(292px, auto);
+  grid-template-columns: minmax(280px, auto);
   grid-template-rows: auto auto;
   gap: 4px;
-  padding: 0;
-  margin: 0;
+  padding: 4px;
+  margin: 0 auto;
 `;
 export const WrapUser = styled.div`
   display: grid;
-  grid-template-columns: 272px auto;
+  grid-template-columns: 272px 1fr;
   .bgr {
     display: grid;
     grid-template-columns: 36px 124px 40px 56px;
     grid-template-rows: 36px;
-    justify-content: flex-start;
+    justify-content: start;
     align-items: center;
     gap: 4px;
     border: none;
     border-radius: 30px;
     background-color: #ffffff;
-    padding: 2px;
+    padding: 2px 2px;
     margin: 0;
   }
 `;
@@ -165,7 +170,7 @@ export const WrapAvatar = styled.div`
 `;
 export const UserName = styled.p`
   display: grid;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   font-size: clamp(12px, 0.614rem + 0.68vw, 18px);
   font-weight: 600;
@@ -174,7 +179,7 @@ export const UserName = styled.p`
 `;
 export const CountLike = styled.span`
   display: grid;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   font-size: clamp(12px, 0.659rem + 0.45vw, 16px);
   color: ${base.colors.green900};
@@ -183,8 +188,8 @@ export const CountLike = styled.span`
 `;
 export const WrapPost = styled.div`
   display: grid;
-  grid-template-columns: minmax(292px, 552px);
-  justify-content: flex-start;
+  grid-template-columns: minmax(280px, 552px);
+  justify-content: start;
   align-items: center;
   gap: 8px;
   border-radius: 14px;
@@ -228,7 +233,7 @@ export const WrapInfo = styled.div`
   gap: 8px;
   grid-template-columns: 1fr;
   grid-template-rows: 20px 1fr;
-  align-items: flex-start;
+  align-items: start;
   padding: 8px;
 `;
 export const WrapTag = styled.div`
@@ -241,20 +246,20 @@ export const WrapTag = styled.div`
   .tags {
     display: grid;
     grid-template-columns: 20px 1fr;
-    justify-content: flex-start;
+    justify-content: start;
     align-items: center;
     gap: 8px;
   }
   .icon-tag {
     width: 16px;
     height: 16px;
-    fill: ${base.colors.comment};
+    fill: ${base.colors.yellow};
   }
   .post-tag {
     box-sizing: border-box;
     font-size: clamp(16px, 0.955rem + 0.23vw, 18px);
     font-weight: 700;
-    color: ${base.colors.comment};
+    color: ${base.colors.yellow};
   }
   .date {
     box-sizing: border-box;
@@ -267,8 +272,8 @@ export const WrapTag = styled.div`
 export const WrapTitle = styled.div`
   display: grid;
   grid-template-columns: 20px 1fr;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: start;
+  align-items: start;
   gap: 4px;
   padding: 0;
   .icon-title {
@@ -288,8 +293,8 @@ export const WrapTitle = styled.div`
 export const PostText = styled.p`
   display: grid;
   grid-template-rows: 1fr;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: start;
+  align-items: start;
   padding: 4px;
   margin: 0;
   font-size: clamp(12px, 0.659rem + 0.45vw, 16px);
@@ -319,7 +324,7 @@ export const WrapReviews = styled.div`
   grid-template-columns: 36px 1fr 36px;
   grid-template-rows: 36px;
   gap: 4px;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   padding: 2px;
 `;
@@ -327,7 +332,7 @@ export const WrapReviews = styled.div`
 export const WrapComment = styled.div`
   display: grid;
   grid-template-columns: 1fr 36px;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   gap: 4px;
 `;
@@ -358,10 +363,10 @@ export const BtnIcons = styled.button`
     fill: ${base.colors.like};
   }
   .coment {
-    fill: ${base.colors.comment};
+    fill: ${base.colors.yellow};
   }
   .send {
-    fill: ${base.colors.comment};
+    fill: ${base.colors.yellow};
   }
   .dots {
     fill: ${base.colors.green900};
@@ -372,8 +377,9 @@ export const BtnIcons = styled.button`
 export const WrapUserList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  grid-template-rows: 1fr;
   gap: 16px;
-  padding: 8px 4px;
+  padding: 8px;
   margin: 0 auto;
   @media screen and (min-width: 480px) {
     padding: 8px;
@@ -388,17 +394,11 @@ export const WrapLink = styled(Link)`
 // *******   USER POST  *******
 export const WrapPostId = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 40px 40px;
+  grid-template-columns: minmax(268px, 1fr);
+  grid-template-rows: 1fr 40px 74px;
   gap: 16px;
-  padding: 8px 0;
+  padding: 4px;
   margin: 0 auto;
-  .message {
-    font-size: clamp(16px, 0.909rem + 0.45vw, 20px);
-    font-weight: 500;
-    color: ${base.colors.green900};
-    padding: 0 4px 8px 4px;
-  }
 `;
 export const WrapItem = styled.div`
   display: grid;
@@ -406,36 +406,8 @@ export const WrapItem = styled.div`
   grid-template-rows: auto auto;
   gap: 8px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 `;
-// export const WrapBtnEdit = styled.div`
-//   display: grid;
-//   grid-template-columns: minmax(292px, 1fr);
-//   grid-template-rows: 40px 40px;
-//   gap: 8px;
-//   .btn {
-//     box-sizing: border-box;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: 16px;
-//     font-weight: 600;
-//     color: #ffffff;
-//     background-color: ${base.colors.green500};
-//     transition: all 0.3s;
-//     border: none;
-//     border-radius: 20px;
-//     cursor: pointer;
-//     &:hover,
-//     :focus {
-//       background-color: ${base.colors.green700};
-//     }
-//   }
-//   @media screen and (min-width: 480px) {
-//     grid-template-columns: 1fr 1fr;
-//     grid-template-rows: 40px;
-//   }
-// `;
 export const BackLink = styled(Link)`
   box-sizing: border-box;
   display: flex;
@@ -455,41 +427,23 @@ export const BackLink = styled(Link)`
     background-color: ${base.colors.green200};
   }
 `;
-// export const BtnUserPost = styled.button`
-//   box-sizing: border-box;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 16px;
-//   font-weight: 600;
-//   color: #ffffff;
-//   background-color: ${base.colors.green500};
-//   transition: all 0.3s;
-//   border: none;
-//   border-radius: 20px;
-//   cursor: pointer;
-//   &:hover,
-//   :focus {
-//     background-color: ${base.colors.green700};
-//   }
-// `;
+
 // *******   USER POST EDIT *******
 export const WrapEditPost = styled.div`
   display: grid;
-  grid-template-columns: minmax(292px, 1fr);
-  grid-template-rows: 40px 40px 40px auto 40px;
-  justify-content: flex-start;
+  grid-template-columns: minmax(268px, 1fr);
+  grid-template-rows: 40px auto 40px auto 88px auto;
+  justify-content: start;
   align-items: center;
-  /* border: 2px solid ${base.colors.green300}; */
   border-radius: 14px;
   gap: 16px;
   background-color: ${base.colors.green50};
-  padding: 8px;
+  padding: 0;
   margin: 0 auto;
   .wrap-radio {
     display: grid;
     grid-template-columns: repeat(auto-fit, 84px);
-    justify-content: flex-start;
+    justify-content: start;
     align-items: center;
     gap: 8px;
   }
@@ -514,7 +468,7 @@ export const WrapEditPost = styled.div`
   .label {
     display: grid;
     grid-template-columns: 12px 1fr;
-    justify-content: flex-start;
+    justify-content: start;
     align-items: center;
     gap: 4px;
     font-size: 16px;
@@ -523,7 +477,7 @@ export const WrapEditPost = styled.div`
   }
   .textarea {
     display: grid;
-    grid-template-columns: minmax(256px 460px);
+    grid-template-columns: minmax(254px 460px);
     box-sizing: border-box;
     font-size: 16px;
     font-weight: 400;
@@ -540,26 +494,6 @@ export const WrapEditPost = styled.div`
   }
   @media screen and (min-width: 480px) {
     grid-template-columns: 460px;
-    grid-template-rows: 40px 40px 40px 1fr 40px;
-  }
-`;
-export const BtnSave = styled.button`
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 40px;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: ${base.colors.green500};
-  transition: all 0.3s;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  &:hover,
-  :focus {
-    background-color: ${base.colors.green700};
+    grid-template-rows: 40px 40px 40px 1fr 40px auto;
   }
 `;

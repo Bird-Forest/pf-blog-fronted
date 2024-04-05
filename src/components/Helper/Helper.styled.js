@@ -11,7 +11,9 @@ export const WrapLoading = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(46, 47, 66, 0.4);
+  /* background-color: rgba(46, 47, 66, 0.4); */
+  backdrop-filter: blur(2px);
+  background-color: rgba(189, 189, 189, 0.5);
 `;
 // *******   EMPTY PAGE *******
 export const WrapEmpty = styled.div`
@@ -35,19 +37,6 @@ export const WrapEmpty = styled.div`
   }
 `;
 // *******   MODAL WINDOW  *******
-export const WrapOverlayModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(2px);
-  background: rgba(189, 189, 189, 0.5);
-  /* background-color: rgba(46, 47, 66, 0.4); */
-`;
 export const WrapModal = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -57,20 +46,53 @@ export const WrapModal = styled.div`
   padding: 8px;
   margin: 0;
 `;
-// export const BtnClose = styled.button`
-//   top: 20px;
-//   right: 20px;
-//   position: absolute;
-//   width: 20px;
-//   height: 20px;
-//   border: none;
-//   background-color: #ffffff;
-//   transition: all 0.3s;
-//   cursor: pointer;
-//   padding: 0;
-//   .close {
-//     width: 20px;
-//     height: 20px;
-//     fill: #424242;
-//   }
-// `;
+
+// *******   NOTIFICATION  *******
+export const WrapNotif = styled.div`
+  display: grid;
+  grid-template-columns: 60px 200px;
+  grid-template-rows: 60px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 16px;
+  padding: 8px;
+  margin: 0 auto;
+  .wrap-notif {
+    display: grid;
+    grid-template-columns: 200px;
+    grid-template-rows: 26px 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .title-notif {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(20px, 1.159rem + 0.45vw, 24px);
+    font-weight: 600;
+    color: ${base.colors.green900};
+    padding: 12px 4px 2px 4px;
+  }
+  .icon-notif {
+    width: 60px;
+    height: 60px;
+  }
+  .green {
+    fill: ${base.colors.green600};
+  }
+  .yellow {
+    fill: ${base.colors.like};
+  }
+  .text-notif {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(14px, 0.83rem + 0.23vw, 16px);
+    font-weight: 500;
+    color: ${base.colors.green900};
+    padding: 2px 4px 12px 4px;
+  }
+`;

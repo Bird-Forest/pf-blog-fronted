@@ -1,41 +1,39 @@
 import React, { useState } from 'react';
 import { FormPost, WrapBtn, WrapCreate } from './Posts.styled';
 import { useAddPostMutation } from '../../redux/PostsSlice';
-import { createPortal } from 'react-dom';
-import ModalWindow from 'components/Helper/ModalWindow';
-import Post from './Post';
+import { Link } from 'react-router-dom';
+import NotifPositive from 'components/Helper/NotifPositive';
+import NotifNegative from 'components/Helper/NotifNegative';
 
 export default function CreatePost() {
-  const [addPost] = useAddPostMutation();
-  const [showModal, setShowModal] = useState(false);
-  const [post, setPost] = useState({
-    imageUrl: '',
-    tag: '',
-    title: '',
-    text: '',
-  });
+  const [isShow, setIsShow] = useState(false);
+  const [addPost, { isError, isSuccess }] = useAddPostMutation();
 
-  const onPreview = evt => {
+  const showSuccess = isShow && isSuccess;
+  const showError = isShow && isError;
+  console.log(showSuccess);
+  console.log(showError);
+
+  const onPublish = evt => {
     evt.preventDefault();
     const newUrl = evt.target.url.value;
     const newTitle = evt.target.title.value;
     const newTag = evt.target.tags.value;
     const newText = evt.target.text.value;
-    setPost({
+    const post = {
       imageUrl: newUrl,
       tag: newTag,
       title: newTitle,
       text: newText,
-    });
-    setShowModal(true);
-  };
-  const onPublish = () => {
+    };
+    // console.log(post);
     addPost(post);
+    setIsShow(true);
   };
 
   return (
     <WrapCreate>
-      <FormPost autoComplete="off" onSubmit={onPreview}>
+      <FormPost autoComplete="off" onSubmit={onPublish}>
         <input
           className="input"
           name="url"
@@ -78,21 +76,29 @@ export default function CreatePost() {
         />
         <WrapBtn>
           <button type="submit" className="btn">
-            preview
-          </button>
-          {showModal &&
-            createPortal(
-              <ModalWindow
-                onClose={() => setShowModal(false)}
-                content={<Post post={post} />}
-              />,
-              document.body
-            )}
-          <button type="button" onClick={onPublish} className="btn">
             publish
           </button>
+          <Link
+            to="/user-posts"
+            className="btn"
+            style={{ textDecoration: 'none' }}
+          >
+            go my posts
+          </Link>
         </WrapBtn>
       </FormPost>
+      {showSuccess && (
+        <NotifPositive
+          message={'You created a post'}
+          onClose={() => setIsShow(false)}
+        />
+      )}
+      {showError && (
+        <NotifNegative
+          message={'Please, try again later'}
+          onClose={() => setIsShow(false)}
+        />
+      )}
     </WrapCreate>
   );
 }

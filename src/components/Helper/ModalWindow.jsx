@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { WrapModal, WrapOverlayModal } from './Helper.styled';
+import { WrapLoading, WrapModal } from './Helper.styled';
 
 export default function ModalWindow({ onClose, content }) {
   useEffect(() => {
@@ -17,8 +17,8 @@ export default function ModalWindow({ onClose, content }) {
     };
   }, [onClose]);
   return (
-    <WrapOverlayModal onClick={onClose}>
+    <WrapLoading onClick={onClose}>
       <WrapModal onClick={e => e.stopPropagation()}>{content}</WrapModal>
-    </WrapOverlayModal>
+    </WrapLoading>
   );
 }
