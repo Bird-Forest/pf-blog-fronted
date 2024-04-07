@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { BtnAuth, WrapForm } from './Enter.styled';
 import FormName from './FormName';
 import FormPass from './FormPass';
+import Spinner from 'components/Helper/Spinner';
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -43,7 +44,7 @@ export default function SignUp() {
             <FormName label="Email*" name="email" type="email" />
             <FormPass label="Password*" name="password" type="password" />
             <BtnAuth type="submit">
-              {props.isSubmitting ? 'loading...' : 'save'}
+              {props.isSubmitting ? <Spinner /> : 'save'}
             </BtnAuth>
           </Form>
         )}

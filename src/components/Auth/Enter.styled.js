@@ -4,8 +4,6 @@ import { base } from 'baseTheme';
 
 export const WrapEnter = styled.div`
   display: grid;
-  /* grid-column: minmax(312px 600px); */
-  /* grid-template-columns: repeat(auto-fit, minmax(312px, 1fr)); */
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr;
   grid-template-rows: 100px 1fr;
@@ -19,6 +17,7 @@ export const WrapEnter = styled.div`
 `;
 
 // *******   WELLCOM  *******
+
 export const WrapWell = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -28,23 +27,24 @@ export const WrapWell = styled.div`
   padding: 0;
   margin: 0 auto;
   background-color: aqua;
-  /* @media screen and (min-width: 480px) {
-    padding: 16px 8px;
-  } */
 `;
 
 // *******   AUTH  *******
+
 export const WrapAuth = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(312px, 460px));
   grid-template-rows: 40px 1fr;
+  justify-content: start;
+  align-items: center;
 `;
 
 // *******   NAVIGATE  *******
+
 export const WrapNav = styled.nav`
   display: grid;
-  grid-template-columns: 1fr 48px 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40px;
   .navigate {
     display: grid;
     grid-template-columns: auto;
@@ -55,49 +55,25 @@ export const WrapNav = styled.nav`
     color: ${base.colors.green900};
     text-decoration: none;
     transition: all 0.3s;
-    background-color: blue;
+    background-color: ${base.colors.green500};
     padding: 0;
-    border: none;
+    cursor: pointer;
     &.active {
-      color: #ffffff;
+      background-color: ${base.colors.green50};
     }
   }
   .left {
-    border-top-right-radius: 24px;
+    border-top-right-radius: 80px;
     border-top-left-radius: 16px;
   }
   .right {
     border-top-right-radius: 16px;
-    border-top-left-radius: 24px;
+    border-top-left-radius: 80px;
   }
-  .wrap-center {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-    /* border: ${base.colors.ground};
-    outline: ${base.colors.ground}; */
-    padding: 0 0 4px 0;
-    margin: 0;
-  }
-  .icon-notif {
-    fill: ${base.colors.yellow};
-    background-color: ${base.colors.ground};
-    outline: ${base.colors.ground};
-    width: 48px;
-    height: 36px;
-    border-bottom-right-radius: 16px;
-    border-bottom-left-radius: 16px;
-    border: none;
-    padding: 0;
-  }
-  /* @media screen and (min-width: 480px) {
-    grid-template-columns: 160px 40px 160px;
-    grid-template-rows: 48px;
-  } */
 `;
 
 // *******   FORM  *******
+
 export const WrapOutlet = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -115,7 +91,6 @@ export const WrapForm = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${base.colors.green50};
-  border: 2px solid ${base.colors.green300};
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
   padding: 16px 8px;
@@ -133,6 +108,7 @@ export const WrapForm = styled.div`
     gap: 16px;
   }
 `;
+
 export const WrapInputName = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -169,9 +145,10 @@ export const WrapInputName = styled.div`
     padding: 4px 8px;
   }
   .name-input.error {
-    border: 2px solid #ff1744;
+    border: 1px solid #ff1744;
   }
 `;
+
 export const WrapInputPass = styled.div`
   position: relative;
   display: grid;
@@ -208,7 +185,7 @@ export const WrapInputPass = styled.div`
     padding: 4px 8px;
   }
   .pass-input.error {
-    border: 2px solid #ff1744;
+    border: 1px solid #ff1744;
   }
   .btn-eye {
     position: absolute;
@@ -221,6 +198,7 @@ export const WrapInputPass = styled.div`
     background-color: #ffffff;
     border: none;
     outline: none;
+    cursor: pointer;
   }
   .icon-eye {
     width: 20px;
@@ -228,10 +206,12 @@ export const WrapInputPass = styled.div`
     fill: ${base.colors.green900};
   }
 `;
+
 export const MessError = styled.div`
   color: #ff1744;
   font-size: 12px;
 `;
+
 export const BtnAuth = styled.button`
   box-sizing: border-box;
   display: flex;
