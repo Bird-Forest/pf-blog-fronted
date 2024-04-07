@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BsFillBookmarkFill,
   BsCircleFill,
@@ -38,14 +38,18 @@ export default function Post({ post }) {
     .format(date)
     .replace(/\//g, '.');
   // console.log(formattedDate);
-  const [updateLikes] = useUpdateLikesMutation();
 
-  const onAddLike = evt => {
-    const id = evt.currentTarget.name;
-    console.log(id);
-    let count = { viewsCount: Number(post.viewsCount + 1) };
-    console.log(count);
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const [updateLikes] = useUpdateLikesMutation();
+  const id = post._id;
+
+  const onAddLike = () => {
+    const like = Number(post.viewsCount + 1);
+    let count = { viewsCount: like };
+
     updateLikes({ id, count });
+    setIsDisabled(true);
   };
 
   return (
@@ -54,7 +58,7 @@ export default function Post({ post }) {
         <div className="bgr">
           <WrapAvatar>R</WrapAvatar>
           <UserName>Tom Fisher</UserName>
-          <BtnIcons name={post._id} type="button" onClick={onAddLike}>
+          <BtnIcons type="button" onClick={onAddLike} disabled={isDisabled}>
             <BsHandThumbsUpFill className="icon like" />
           </BtnIcons>
           <CountLike>{post.viewsCount}</CountLike>

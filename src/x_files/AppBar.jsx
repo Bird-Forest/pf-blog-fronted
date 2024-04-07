@@ -8,13 +8,16 @@ export default function AppBar() {
     <WrapHeader>
       <WrapNav>
         <NavLink className="navigate" to="/">
-          Posts
+          posts
         </NavLink>
         <NavLink className="navigate" to="/create">
-          Create
+          create
         </NavLink>
         <NavLink className="navigate" to="/user-posts">
-          My posts
+          my posts
+        </NavLink>
+        <NavLink className="navigate" to="/enter">
+          enter
         </NavLink>
       </WrapNav>
     </WrapHeader>

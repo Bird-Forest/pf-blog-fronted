@@ -376,10 +376,11 @@ export const BtnIcons = styled.button`
 // *******   USER PAGE *******
 export const WrapUserList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(312px, 1fr)); */
+  grid-template-columns: minmax(312px, auto);
   grid-template-rows: 1fr;
   gap: 16px;
-  padding: 8px;
+  padding: 8px 4px;
   margin: 0 auto;
   @media screen and (min-width: 480px) {
     padding: 8px;

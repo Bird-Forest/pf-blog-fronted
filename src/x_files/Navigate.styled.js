@@ -3,7 +3,7 @@ import { base } from 'baseTheme';
 
 export const WrapNav = styled.header`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;

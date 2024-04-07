@@ -11,6 +11,9 @@ const PostsPage = lazy(() => import('./pages/PostsPage'));
 const CreatePage = lazy(() => import('./pages/CreatePage'));
 const UserPage = lazy(() => import('./pages/UserPage'));
 const UserPost = lazy(() => import('./components/Posts/UserPost'));
+const Enter = lazy(() => import('./pages/EnterPage'));
+const Signup = lazy(() => import('./components/Auth/SignUp'));
+const Signin = lazy(() => import('./components/Auth/SignIn'));
 
 export default function App() {
   return (
@@ -23,6 +26,10 @@ export default function App() {
             <Route path="/create" element={<CreatePage />} />
             <Route path="/user-posts" element={<UserPage />} />
             <Route path="/user-posts/:id" element={<UserPost />} />
+            <Route path="/enter" element={<Enter />}>
+              <Route path="sign-up" element={<Signup />} />
+              <Route path="sign-in" element={<Signin />} />
+            </Route>
           </Routes>
         </Suspense>
       </Container>

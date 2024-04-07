@@ -84,7 +84,7 @@ export const WrapNotif = styled.div`
     fill: ${base.colors.green600};
   }
   .yellow {
-    fill: ${base.colors.like};
+    fill: ${base.colors.yellow};
   }
   .text-notif {
     display: grid;
