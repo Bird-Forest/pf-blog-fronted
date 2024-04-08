@@ -1,8 +1,22 @@
 import styled from 'styled-components';
+import { base } from 'baseTheme';
+
+// ******** PROFILE ********
+export const WrapProfile = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(304px, 552px));
+  grid-template-rows: 1fr 1fr 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${base.colors.green50};
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  padding: 16px 8px;
+  margin: 0 auto;
+`;
 
 export const WrapUpload = styled.div`
   display: grid;
-
   .input-hidden {
     opacity: 0;
     width: 0;
@@ -30,3 +44,5 @@ export const WrapUpload = styled.div`
     padding: 0;
   }
 `;
+
+export const WrapUserName = styled.div``;

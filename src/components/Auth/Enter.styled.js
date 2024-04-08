@@ -33,7 +33,7 @@ export const WrapWell = styled.div`
 
 export const WrapAuth = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(312px, 460px));
+  grid-template-columns: repeat(auto-fit, minmax(312px, 552px));
   grid-template-rows: 40px 1fr;
   justify-content: start;
   align-items: center;
@@ -86,7 +86,7 @@ export const WrapOutlet = styled.div`
 
 export const WrapForm = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(296px, 640px));
+  grid-template-columns: repeat(auto-fit, minmax(296px, 552px));
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;

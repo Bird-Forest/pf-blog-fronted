@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export const WrapCreate = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: minmax(292px, 1fr);
+  grid-template-columns: minmax(304px, 552px);
   grid-template-rows: 1fr 74px;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ export const WrapCreate = styled.div`
 
 export const FormPost = styled.form`
   display: grid;
-  grid-template-columns: minmax(292px, 1fr);
+  grid-template-columns: minmax(288px, 552px);
   grid-template-rows: 40px 40px 40px 1fr 88px;
   justify-content: start;
   align-items: center;
@@ -93,7 +93,7 @@ export const WrapBtn = styled.div`
   grid-template-rows: 40px 40px;
   gap: 8px;
   .btn {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,15 +118,24 @@ export const WrapBtn = styled.div`
 `;
 
 // *******   POST LIST *******
-export const WrapPostsList = styled.ul`
+export const WrapPostPage = styled.div`
   display: grid;
   grid-template-columns: minmax(312px, 1fr);
   grid-template-rows: 1fr;
-  gap: 16px;
+  justify-content: start;
+  align-items: center;
   padding: 8px 4px;
   margin: 0 auto;
+`;
+export const WrapPostsList = styled.ul`
+  display: grid;
+  grid-template-columns: minmax(304px, 1fr);
+  grid-template-rows: 1fr;
+  gap: 16px;
+  padding: 8px;
+  margin: 0 auto;
   @media screen and (min-width: 480px) {
-    padding: 8px;
+    padding: 16px 8px;
   }
   @media screen and (min-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
@@ -137,7 +146,8 @@ export const WrapPostsList = styled.ul`
 // *******   POST *******
 export const WrapUserPost = styled.li`
   display: grid;
-  grid-template-columns: minmax(280px, auto);
+  /* grid-template-columns: minmax(296px, 1fr); */
+  grid-template-columns: repeat(1, minmax(296px, 552px));
   grid-template-rows: auto auto;
   gap: 4px;
   padding: 4px;
@@ -377,14 +387,14 @@ export const BtnIcons = styled.button`
 export const WrapUserList = styled.ul`
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(312px, 1fr)); */
-  grid-template-columns: minmax(312px, auto);
+  grid-template-columns: minmax(304px, auto);
   grid-template-rows: 1fr;
   gap: 16px;
-  padding: 8px 4px;
+  padding: 8px;
   margin: 0 auto;
-  @media screen and (min-width: 480px) {
+  /* @media screen and (min-width: 480px) {
     padding: 8px;
-  }
+  } */
 `;
 export const WrapLink = styled(Link)`
   text-decoration: none;
@@ -432,14 +442,14 @@ export const BackLink = styled(Link)`
 // *******   USER POST EDIT *******
 export const WrapEditPost = styled.div`
   display: grid;
-  grid-template-columns: minmax(268px, 1fr);
+  grid-template-columns: minmax(268px, 552px);
   grid-template-rows: 40px auto 40px auto 88px auto;
   justify-content: start;
   align-items: center;
   border-radius: 14px;
   gap: 16px;
   background-color: ${base.colors.green50};
-  padding: 0;
+  padding: 4px;
   margin: 0 auto;
   .wrap-radio {
     display: grid;
@@ -478,7 +488,7 @@ export const WrapEditPost = styled.div`
   }
   .textarea {
     display: grid;
-    grid-template-columns: minmax(254px 460px);
+    grid-template-columns: 1fr;
     box-sizing: border-box;
     font-size: 16px;
     font-weight: 400;
@@ -494,7 +504,7 @@ export const WrapEditPost = styled.div`
     color: ${base.colors.green300};
   }
   @media screen and (min-width: 480px) {
-    grid-template-columns: 460px;
+    /* grid-template-columns: 460px; */
     grid-template-rows: 40px 40px 40px 1fr 40px auto;
   }
 `;

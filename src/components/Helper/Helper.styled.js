@@ -41,7 +41,7 @@ export const WrapModal = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  border-radius: 24px;
+  border-radius: 16px;
   background-color: #ffffff;
   padding: 8px;
   margin: 0;
