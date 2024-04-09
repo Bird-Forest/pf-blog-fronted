@@ -1,11 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {
-  BackLink,
-  WrapBtn,
-  WrapItem,
-  WrapPostId,
-  WrapUserList,
-} from './Posts.styled';
+import { BackLink, WrapBtn, WrapItem, WrapPostId } from './Posts.styled';
 import Post from './Post';
 import {
   useDeletePostMutation,
@@ -49,46 +43,44 @@ export default function UserPost() {
 
   return (
     <WrapRender>
-      <WrapUserList>
-        <WrapPostId>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            <WrapItem>
-              <Post post={post} />
-              <WrapBtn>
-                <button type="button" onClick={onEdit} className="btn">
-                  edit
-                </button>
-                {showModal &&
-                  createPortal(
-                    <ModalWindow
-                      onClose={() => setShowModal(false)}
-                      content={<EditPost data={data} />}
-                    />,
-                    document.body
-                  )}
-                <button type="button" onClick={onDelete} className="btn">
-                  delete
-                </button>
-              </WrapBtn>
-            </WrapItem>
-          )}
-          <BackLink to={backHref.current}>come back</BackLink>
-          {showSuccess && (
-            <NotifPositive
-              message={'List of posts updated'}
-              onClose={() => setIsShow(false)}
-            />
-          )}
-          {showError && (
-            <NotifNegative
-              message={'Please, try again later'}
-              onClose={() => setIsShow(false)}
-            />
-          )}
-        </WrapPostId>
-      </WrapUserList>
+      <WrapPostId>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <WrapItem>
+            <Post post={post} />
+            <WrapBtn>
+              <button type="button" onClick={onEdit} className="btn">
+                edit
+              </button>
+              {showModal &&
+                createPortal(
+                  <ModalWindow
+                    onClose={() => setShowModal(false)}
+                    content={<EditPost data={data} />}
+                  />,
+                  document.body
+                )}
+              <button type="button" onClick={onDelete} className="btn">
+                delete
+              </button>
+            </WrapBtn>
+          </WrapItem>
+        )}
+        <BackLink to={backHref.current}>come back</BackLink>
+        {showSuccess && (
+          <NotifPositive
+            message={'List of posts updated'}
+            onClose={() => setIsShow(false)}
+          />
+        )}
+        {showError && (
+          <NotifNegative
+            message={'Please, try again later'}
+            onClose={() => setIsShow(false)}
+          />
+        )}
+      </WrapPostId>
     </WrapRender>
   );
 }

@@ -4,19 +4,41 @@ import { base } from 'baseTheme';
 // ******** PROFILE ********
 export const WrapProfile = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(304px, 552px));
-  grid-template-rows: 1fr 1fr 40px;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: minmax(272px, 420px);
+  grid-template-rows: auto auto;
+  gap: 40px;
+  border: 2px solid ${base.colors.green300};
+  border-radius: 14px;
   background-color: ${base.colors.green50};
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-  padding: 16px 8px;
-  margin: 0 auto;
+  padding: 20px;
+  margin: 20px auto;
 `;
 
+// ******** UPLOAD AVATAR ********
 export const WrapUpload = styled.div`
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 40px;
+  gap: 16px;
+`;
+export const UploadImg = styled.div`
+  display: grid;
+  grid-template-columns: 1px 80px 160px;
+  grid-template-rows: 80px;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  .avatar-img {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 1px solid ${base.colors.green900};
+  }
   .input-hidden {
     opacity: 0;
     width: 0;
@@ -28,21 +50,52 @@ export const WrapUpload = styled.div`
   }
   .btn-choose {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-    font-weight: 400;
+    width: 160px;
+    height: 40px;
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    text-align: center;
-    color: #424242;
-    background-color: transparent;
+    /* color: ${base.colors.green900}; */
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: ${base.colors.green200};
     border: none;
-    cursor: pointer;
-    width: 60px;
-    height: 24px;
     padding: 0;
+    cursor: pointer;
+    &:hover,
+    :focus {
+      background-color: ${base.colors.green400};
+    }
   }
 `;
-
-export const WrapUserName = styled.div``;
+export const BtnUdate = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: ${base.colors.green500};
+  transition: all 0.3s;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover,
+  :focus {
+    background-color: ${base.colors.green700};
+  }
+`;
+// ******** UPDATE NAME ********
+export const WrapUpdateName = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  .form-up {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 40px;
+  }
+`;

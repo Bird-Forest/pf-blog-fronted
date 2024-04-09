@@ -1,18 +1,25 @@
 import React from 'react';
 import Post from './Post';
-import { WrapPostsList } from './Posts.styled';
+import { WrapList, WrapPanelPost } from './Posts.styled';
 import EmptyPage from '../Helper/EmptyPage';
+import UserPanel from './UserPanel';
+import { nanoid } from '@reduxjs/toolkit';
 // import { base } from 'baseTheme';
 
 export default function PostsList({ posts, ...otherProps }) {
   const Arr = Array.isArray(posts) && posts.length > 0;
   return (
-    <WrapPostsList>
+    <WrapList>
       {Arr ? (
-        posts.map(post => <Post key={post._id} post={post} />)
+        posts.map(post => (
+          <WrapPanelPost key={nanoid()}>
+            <UserPanel key={nanoid()} post={post} />
+            <Post key={nanoid()} post={post} />
+          </WrapPanelPost>
+        ))
       ) : (
         <EmptyPage message={"There's nothing here yet"} />
       )}
-    </WrapPostsList>
+    </WrapList>
   );
 }
