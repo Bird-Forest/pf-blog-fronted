@@ -31,6 +31,16 @@ export default function CreatePost() {
     setIsShow(true);
   };
 
+  const userLS = localStorage.getItem('user');
+  try {
+    const data = JSON.parse(userLS);
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error.name); // "SyntaxError"
+    console.log(error.message); // "Unexpected token u in JSON at position 1"
+  }
+
   return (
     <WrapCreate>
       <FormPost autoComplete="off" onSubmit={onPublish}>

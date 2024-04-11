@@ -37,14 +37,6 @@ export const postsApi = createApi({
       }),
       invalidatesTags: ['Posts'],
     }),
-    updateLikes: builder.mutation({
-      query: ({ id, count }) => ({
-        url: `/posts/${id}/counter`,
-        method: 'PATCH',
-        body: count,
-      }),
-      invalidatesTags: ['Posts'],
-    }),
   }),
 });
 
@@ -56,5 +48,4 @@ export const {
   useGetPostByIdQuery,
   useDeletePostMutation,
   useUpdatePostMutation,
-  useUpdateLikesMutation,
 } = postsApi;

@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import Loading from 'components/Helper/Loading';
 import { ThemeProvider } from 'styled-components';
 import { base } from './baseTheme';
+// import { useGetUserQuery } from './redux/UserSlice';
 
 const PostsPage = lazy(() => import('./pages/PostsPage'));
 const CreatePage = lazy(() => import('./pages/CreatePage'));
@@ -17,6 +18,11 @@ const Signup = lazy(() => import('./components/Auth/SignUp'));
 const Signin = lazy(() => import('./components/Auth/SignIn'));
 
 export default function App() {
+  // const id = JSON.parse(window.localStorage.getItem('id'));
+  // const id = '66165b5638f9785fec4ddbe1';
+  // const { data: user } = useGetUserQuery();
+  // console.log(user);
+
   return (
     <ThemeProvider theme={base}>
       <Container>

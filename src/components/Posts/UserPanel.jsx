@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   BtnIcons,
   CountLike,
@@ -7,29 +7,40 @@ import {
   WrapPanel,
 } from './Posts.styled';
 import { BsHandThumbsUpFill } from 'react-icons/bs';
-import { useUpdateLikesMutation } from '../../redux/PostsSlice';
+// import { useGetUserQuery } from '../../redux/UserSlice';
 
-export default function UserPanel({ post }) {
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [updateLikes] = useUpdateLikesMutation();
-  const id = post._id;
+export default function UserPanel() {
+  // const [isDisabled, setIsDisabled] = useState(false);
 
-  const onAddLike = () => {
-    const like = Number(post.viewsCount + 1);
-    let count = { viewsCount: like };
+  // const [updateLikes] = useUpdateLikesMutation();
+  // const id = user._id;
 
-    updateLikes({ id, count });
-    setIsDisabled(true);
-  };
+  // const onAddLike = () => {
+  //   const like = Number(user.viewsCount + 1);
+  //   let count = { viewsCount: like };
+
+  //   updateLikes({ id, count });
+  //   setIsDisabled(true);
+  // };
+  // const userLS = localStorage.getItem('user');
+  // try {
+  //   const data = JSON.parse(userLS);
+  //   console.log(data);
+  //   return data;
+  // } catch (error) {
+  //   console.log(error.name); // "SyntaxError"
+  //   console.log(error.message); // "Unexpected token u in JSON at position 1"
+  // }
   return (
     <WrapPanel>
       <div className="bgr">
         <PanelAvatar>R</PanelAvatar>
-        <PanelName>Tom Fisher</PanelName>
-        <BtnIcons type="button" onClick={onAddLike} disabled={isDisabled}>
+        <PanelName>Tomas</PanelName>
+        {/* <BtnIcons type="button" onClick={onAddLike} disabled={isDisabled}> */}
+        <BtnIcons type="button">
           <BsHandThumbsUpFill className="icon like" />
         </BtnIcons>
-        <CountLike>{post.viewsCount}</CountLike>
+        <CountLike>0</CountLike>
       </div>
     </WrapPanel>
   );
