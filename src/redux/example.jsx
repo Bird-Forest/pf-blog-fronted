@@ -27,6 +27,29 @@ const api = createApi({
 });
 
 export const { useGetPostsQuery } = api;
+// *** STORE ****
+// import { configureStore } from '@reduxjs/toolkit';
+// import { setupListeners } from '@reduxjs/toolkit/query';
+// import { postsApi } from '../redux/PostsSlice';
+// import { userApi } from '../redux/UserSlice';
+
+// export const store = configureStore({
+//   reducer: {
+//     [postsApi.reducerPath]: postsApi.reducer,
+//     [userApi.reducerPath]: userApi.reducer,
+//   },
+
+//   // middleware: getDefaultMiddleware =>
+//   // getDefaultMiddleware().concat(postsApi.middleware),
+//   middleware: getDefaultMiddleware => [
+//     ...getDefaultMiddleware(),
+//     postsApi.middleware,
+//     userApi.middleware,
+//   ],
+//   devTools: process.env.NODE_ENV !== 'production',
+// });
+
+// setupListeners(store.dispatch);
 
 // ****
 // const selectSelf = (state: State) => state;

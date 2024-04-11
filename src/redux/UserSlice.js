@@ -2,14 +2,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const userApi = createApi({
   reducerPath: 'user',
-  user: {
-    id: null,
-    name: null,
-    email: null,
-    avatar: null,
-    token: null,
-    viewsCount: 0,
-  },
 
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/api/users' }),
   tagTypes: ['Users'],
@@ -77,7 +69,4 @@ export const {
   useUpdateAvatarMutation,
   useLogOutUserMutation,
   useUpdateLikesMutation,
-  // selectUser,
 } = userApi;
-
-// export const { selectUser } = userApi.selectors;
