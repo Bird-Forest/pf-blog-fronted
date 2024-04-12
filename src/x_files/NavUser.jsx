@@ -11,6 +11,9 @@ export default function NavUser() {
       <NavLink className="navigate" to="/profile">
         profile
       </NavLink>
+      <NavLink className="navigate" to="/logout">
+        log out
+      </NavLink>
     </WrapNavUser>
   );
 }

@@ -1,7 +1,4 @@
-// export const selectUser = state => state.user; // Замените на свой slice
-// const selectUserId = createSelector(
-//   selectCart,
-//   cart => cart.items[itemId]?.count || 0
-// );
-// Ваш селектор (в файле, связанном с корзиной)
-// import { createSelector } from '@reduxjs/toolkit';
+export const selectUser = state => state.auth.user;
+export const selectToken = state => state.auth.token;
+export const selectLoading = state => state.auth.isLoading;
+export const selectErrorUser = state => state.auth.error;

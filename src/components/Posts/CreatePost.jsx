@@ -11,8 +11,6 @@ export default function CreatePost() {
 
   const showSuccess = isShow && isSuccess;
   const showError = isShow && isError;
-  console.log(showSuccess);
-  console.log(showError);
 
   const onPublish = evt => {
     evt.preventDefault();
@@ -26,21 +24,10 @@ export default function CreatePost() {
       title: newTitle,
       text: newText,
     };
-    // console.log(post);
+
     addPost(post);
     setIsShow(true);
   };
-
-  const userLS = localStorage.getItem('user');
-  try {
-    const data = JSON.parse(userLS);
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.log(error.name); // "SyntaxError"
-    console.log(error.message); // "Unexpected token u in JSON at position 1"
-  }
-
   return (
     <WrapCreate>
       <FormPost autoComplete="off" onSubmit={onPublish}>

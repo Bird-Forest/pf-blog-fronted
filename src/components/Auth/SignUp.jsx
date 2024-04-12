@@ -5,12 +5,11 @@ import { BtnAuth, WrapForm, WrapOutlet } from './Enter.styled';
 import FormName from './FormName';
 import FormPass from './FormPass';
 import Spinner from 'components/Helper/Spinner';
-import { useSignUpUserMutation } from '../../redux/UserSlice';
-// import { useSelector } from 'react-redux';
-// import { selectUserId } from '../../redux/UserSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import NotifPositive from 'components/Helper/NotifPositive';
 import NotifNegative from 'components/Helper/NotifNegative';
-// import useLocalStorage from '../../hook/useLocalStorage';
+import { signUpUser } from '../../redux/servise';
+import { selectErrorUser, selectLoading } from '../../redux/selectors';
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -29,31 +28,9 @@ const initialValues = {
 
 export default function SignUp() {
   const [isShow, setIsShow] = useState(false);
-  // const [user, setUser] = useLocalStorage('user', '');
-  // console.log(user);
-  const [signUpUser, { data, isError, isSuccess, isLoading }] =
-    useSignUpUserMutation();
-  console.log('DATA', data);
-  // setUser(data);
-  // localStorage.setItem('user', JSON.stringify(user));
-  // window.localStorage.setItem('user', JSON.stringify(user));
-
-  // const userLS = JSON.parse(window.localStorage.getItem('user', user));
-  // console.log(userLS);
-
-  // console.log('isError', isError);
-  // console.log('isSuccess', isSuccess);
-
-  // const item = useSelector(selectUserId);
-  // console.log(item);
-
-  // const state = item.mutation;
-  // console.log('MUTAT', state);
-  // const newUser = data.user;
-  // console.log(newUser);
-
-  const showSuccess = isShow && isSuccess;
-  const showError = isShow && isError;
+  const dispatch = useDispatch();
+  const isError = useSelector(selectErrorUser);
+  const isLoading = useSelector(selectLoading);
 
   return (
     <WrapOutlet>
@@ -64,7 +41,7 @@ export default function SignUp() {
           onSubmit={(values, { setSubmitting, resetForm }) => {
             setSubmitting(true);
             console.log(values);
-            signUpUser(values);
+            dispatch(signUpUser(values));
             setIsShow(true);
             resetForm();
           }}
@@ -81,8 +58,8 @@ export default function SignUp() {
           )}
         </Formik>
       </WrapForm>
-      {showSuccess && <NotifPositive onClose={() => setIsShow(false)} />}
-      {showError && (
+      {isShow && <NotifPositive onClose={() => setIsShow(false)} />}
+      {isError && (
         <NotifNegative
           message={isError.message}
           onClose={() => setIsShow(false)}

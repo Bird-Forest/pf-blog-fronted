@@ -1,7 +1,11 @@
-import { combineSlices, configureStore } from '@reduxjs/toolkit';
+import {
+  // combineSlices,
+  configureStore,
+  combineReducers,
+} from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { postsApi } from '../redux/PostsSlice';
-import { userApi } from '../redux/UserSlice';
+import { authReducer } from '../redux/AuthSlice';
 import {
   persistStore,
   persistReducer,
@@ -14,16 +18,16 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-const userPersistConfig = {
-  key: 'user',
+const authPersistConfig = {
+  key: 'auth',
   storage,
-  whitelist: ['user'],
-  blacklist: [postsApi.reducerPath, userApi.reducerPath],
+  whitelist: ['user', 'token'],
+  // blacklist: [postsApi.reducerPath],
 };
 
-const rootReducer = combineSlices({
+const rootReducer = combineReducers({
   [postsApi.reducerPath]: postsApi.reducer,
-  [userApi.reducerPath]: persistReducer(userPersistConfig, userApi.reducer),
+  auth: persistReducer(authPersistConfig, authReducer),
 });
 
 export const store = configureStore({
@@ -35,7 +39,6 @@ export const store = configureStore({
       },
     }),
     postsApi.middleware,
-    userApi.middleware,
   ],
   devTools: process.env.NODE_ENV !== 'production',
 });

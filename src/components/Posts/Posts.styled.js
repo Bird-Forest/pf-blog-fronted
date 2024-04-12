@@ -66,6 +66,17 @@ export const PanelAvatar = styled.div`
   align-items: center;
   border-radius: 50%;
   background-color: yellow;
+  .img-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .icon-avatar {
+    width: 32px;
+    height: 32px;
+    fill: ${base.colors.green900};
+  }
 `;
 export const PanelName = styled.p`
   display: grid;

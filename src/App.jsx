@@ -6,7 +6,6 @@ import { Route, Routes } from 'react-router-dom';
 import Loading from 'components/Helper/Loading';
 import { ThemeProvider } from 'styled-components';
 import { base } from './baseTheme';
-// import { useGetUserQuery } from './redux/UserSlice';
 
 const PostsPage = lazy(() => import('./pages/PostsPage'));
 const CreatePage = lazy(() => import('./pages/CreatePage'));
@@ -16,13 +15,9 @@ const Enter = lazy(() => import('./pages/EnterPage'));
 const Profile = lazy(() => import('./components/Users/Profile'));
 const Signup = lazy(() => import('./components/Auth/SignUp'));
 const Signin = lazy(() => import('./components/Auth/SignIn'));
+const Logout = lazy(() => import('./pages/LogOutPage'));
 
 export default function App() {
-  // const id = JSON.parse(window.localStorage.getItem('id'));
-  // const id = '66165b5638f9785fec4ddbe1';
-  // const { data: user } = useGetUserQuery();
-  // console.log(user);
-
   return (
     <ThemeProvider theme={base}>
       <Container>
@@ -34,6 +29,7 @@ export default function App() {
             <Route path="/user-posts" element={<UserPage />} />
             <Route path="/user-posts/:id" element={<UserPost />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/enter" element={<Enter />}>
               <Route path="sign-up" element={<Signup />} />
               <Route path="sign-in" element={<Signin />} />

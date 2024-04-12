@@ -1,12 +1,12 @@
 import React from 'react';
 import { WrapRender } from './Page.styled';
-import { useGetPostsQuery } from '../redux/PostsSlice';
+import { useGetUserPostsQuery } from '../redux/PostsSlice';
 import EmptyPage from 'components/Helper/EmptyPage';
 import UserPostsList from 'components/Posts/UserPostsList';
 import Loading from 'components/Helper/Loading';
 
 export default function UserPage() {
-  const { data: posts, error, isLoading } = useGetPostsQuery();
+  const { data: posts, error, isLoading } = useGetUserPostsQuery();
   return (
     <WrapRender>
       {isLoading ? <Loading /> : <UserPostsList posts={posts} />}

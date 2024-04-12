@@ -4,10 +4,10 @@ import { useGetPostsQuery } from '../redux/PostsSlice';
 import PostsList from 'components/Posts/PostsList';
 import EmptyPage from 'components/Helper/EmptyPage';
 import Loading from 'components/Helper/Loading';
-// import { WrapPostPage } from 'components/Posts/Posts.styled';
 
 export default function PostsPage() {
   const { data: posts, error, isLoading } = useGetPostsQuery();
+  console.log(posts);
 
   return (
     <WrapRender>

@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import { redirect } from 'react-router-dom';
-import { useGetUserQuery } from '../redux/UserSlice';
+import { useGetUserQuery } from '../redux/UserOldSlice';
 import { useState } from 'react';
 
 export default function useLocalStorage() {

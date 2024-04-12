@@ -5,10 +5,11 @@ import { BtnAuth, WrapForm, WrapOutlet } from './Enter.styled';
 import FormName from './FormName';
 import FormPass from './FormPass';
 import Spinner from 'components/Helper/Spinner';
-import { useSignInUserMutation } from '../../redux/UserSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectErrorUser } from '../../redux/selectors';
 import NotifPositive from 'components/Helper/NotifPositive';
 import NotifNegative from 'components/Helper/NotifNegative';
-// import useLocalStorage from '../../hook/useLocalStorage';
+import { signInUser } from '../../redux/servise';
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('This field is required'),
@@ -21,18 +22,10 @@ const initialValues = {
 };
 
 export default function SignIn() {
-  // const [user, setUser] = useLocalStorage('user', '');
-  // console.log(user);
-  const [signInUser, { data: user, isError, isLoading, isSuccess }] =
-    useSignInUserMutation();
-  console.log(user);
-  // setUser(data);
-  // localStorage.setItem('user', JSON.stringify(user));
-  // localStorage.setItem('user', JSON.stringify(user));
-  // console.log(user);
   const [isShow, setIsShow] = useState(false);
-  const showSuccess = isShow && isSuccess;
-  const showError = isShow && isError;
+  const dispatch = useDispatch();
+  const isError = useSelector(selectErrorUser);
+
   return (
     <WrapOutlet>
       <WrapForm>
@@ -41,8 +34,8 @@ export default function SignIn() {
           validationSchema={validationSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             setSubmitting(true);
+            dispatch(signInUser(values));
             console.log(values);
-            signInUser(values);
             resetForm();
             setIsShow(true);
           }}
@@ -52,16 +45,16 @@ export default function SignIn() {
               <FormName label="Email*" name="email" type="email" />
               <FormPass label="Password*" name="password" type="password" />
               <BtnAuth type="submit">
-                {isLoading ? <Spinner /> : 'save'}
+                {props.isSubmitting ? <Spinner /> : 'save'}
               </BtnAuth>
             </Form>
           )}
         </Formik>
       </WrapForm>
-      {showSuccess && (
+      {isShow && (
         <NotifPositive message={'Success'} onClose={() => setIsShow(false)} />
       )}
-      {showError && (
+      {isError !== null && (
         <NotifNegative
           message={isError.message}
           onClose={() => setIsShow(false)}

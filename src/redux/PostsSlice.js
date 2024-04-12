@@ -1,5 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import axios from 'axios';
 
+const auth = JSON.parse(localStorage.getItem('persist:auth'));
+const tokenAuth = auth.token;
+const token = tokenAuth.replace(/"/g, '');
+// const token = getStoredState().auth.token;
+// console.log(auth);
+console.log(token);
+
+// import { setAuthHeader } from './servise';
 // Define a service using a base URL and expected endpoints
 export const postsApi = createApi({
   reducerPath: 'posts',
@@ -10,14 +19,36 @@ export const postsApi = createApi({
       query: () => '/posts',
       providesTags: ['Posts'],
     }),
+    getUserPosts: builder.query({
+      query: () => ({
+        url: '/posts/user',
+        method: 'GET',
+        headers: {
+          authorization:
+            (axios.defaults.headers.common.Authorization = `Bearer ${token}`),
+        },
+      }),
+      providesTags: ['Posts'],
+    }),
     getPostById: builder.query({
-      query: id => `/posts/${id}`,
+      query: id => ({
+        url: `/posts/${id}`,
+        method: 'GET',
+        headers: {
+          authorization:
+            (axios.defaults.headers.common.Authorization = `Bearer ${token}`),
+        },
+      }),
       providesTags: ['Posts'],
     }),
     addPost: builder.mutation({
       query: post => ({
         url: '/posts',
         method: 'POST',
+        headers: {
+          authorization:
+            (axios.defaults.headers.common.Authorization = `Bearer ${token}`),
+        },
         body: post,
       }),
       invalidatesTags: ['Posts'],
@@ -26,6 +57,10 @@ export const postsApi = createApi({
       query: id => ({
         url: `/posts/${id}`,
         method: 'DELETE',
+        headers: {
+          authorization:
+            (axios.defaults.headers.common.Authorization = `Bearer ${token}`),
+        },
       }),
       invalidatesTags: ['Posts'],
     }),
@@ -33,6 +68,10 @@ export const postsApi = createApi({
       query: ({ id, post }) => ({
         url: `/posts/${id}`,
         method: 'PUT',
+        headers: {
+          authorization:
+            (axios.defaults.headers.common.Authorization = `Bearer ${token}`),
+        },
         body: post,
       }),
       invalidatesTags: ['Posts'],
@@ -44,8 +83,26 @@ export const postsApi = createApi({
 // auto-generated based on the defined endpoints
 export const {
   useGetPostsQuery,
-  useAddPostMutation,
+  useGetUserPostsQuery,
   useGetPostByIdQuery,
+  useAddPostMutation,
   useDeletePostMutation,
   useUpdatePostMutation,
 } = postsApi;
+
+// headers: {
+//   authorization:
+//     (axios.defaults.headers.common.Authorization = `Bearer ${token}`),
+// },
+
+// const baseQuery = fetchBaseQuery({
+//   baseUrl: '/',
+//   prepareHeaders: (headers, { getState }) => {
+//     const token = getState().auth.token;
+//     if (token) {
+//       headers.set('authorization', `Bearer ${token}`);
+//     }
+
+//     return headers;
+//   },
+// });
