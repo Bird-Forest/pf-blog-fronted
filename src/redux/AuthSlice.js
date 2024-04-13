@@ -14,10 +14,10 @@ const initialState = {
     id: null,
     name: null,
     email: null,
-    avatar: ' ',
+    avatar: null,
     likes: 0,
   },
-  token: null,
+  token: ' ',
   isLoading: false,
   error: null,
 };
@@ -41,7 +41,7 @@ const authSlice = createSlice({
       .addCase(signUpUser.pending, handlePending)
       .addCase(signUpUser.fulfilled, (state, action) => {
         state.token = action.payload.token;
-        state.user = action.payload.uaer;
+        state.user = action.payload.user;
         state.isLoading = false;
       })
       .addCase(signUpUser.rejected, handleRejected)
@@ -61,10 +61,10 @@ const authSlice = createSlice({
         state.user = {
           name: null,
           email: null,
-          avatar: ' ',
+          avatar: null,
           likes: 0,
         };
-        state.token = null;
+        state.token = ' ';
         state.isLoading = false;
       })
       .addCase(logOutUser.rejected, handleRejected)

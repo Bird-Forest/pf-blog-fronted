@@ -7,7 +7,6 @@ import Loading from 'components/Helper/Loading';
 
 export default function PostsPage() {
   const { data: posts, error, isLoading } = useGetPostsQuery();
-  console.log(posts);
 
   return (
     <WrapRender>

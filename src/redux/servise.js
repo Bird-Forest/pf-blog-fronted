@@ -18,7 +18,7 @@ export const signUpUser = createAsyncThunk(
   async (values, thunkAPI) => {
     try {
       const res = await axios.post('/signup', values);
-      console.log(res);
+      console.log(res.data);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ export const signInUser = createAsyncThunk(
   async (values, thunkAPI) => {
     try {
       const res = await axios.post('/signin', values);
-      console.log(res);
+      console.log(res.data);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -47,15 +47,15 @@ export const signInUser = createAsyncThunk(
  */
 export const updateLikes = createAsyncThunk(
   'auth/updateLikes',
-  async (id, count, thunkAPI) => {
-    // console.log(values);
+  async ({ id, likes }, thunkAPI) => {
+    console.log(id, likes);
     try {
       const state = thunkAPI.getState();
       const token = state.auth.token;
       setAuthHeader(token);
-      const res = await axios.patch(`/${id}/likes`, count);
+      const res = await axios.patch(`/${id}/likes`, likes);
       setAuthHeader(res.data.token);
-      // console.log(res.data);
+      console.log(res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

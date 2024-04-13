@@ -2,14 +2,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import axios from 'axios';
 
 const auth = JSON.parse(localStorage.getItem('persist:auth'));
-const tokenAuth = auth.token;
-const token = tokenAuth.replace(/"/g, '');
-// const token = getStoredState().auth.token;
 // console.log(auth);
+const tokenAuth = auth.token;
+// console.log(tokenAuth);
+const token = tokenAuth ? tokenAuth.replace(/"/g, '') : ' ';
 console.log(token);
 
-// import { setAuthHeader } from './servise';
-// Define a service using a base URL and expected endpoints
 export const postsApi = createApi({
   reducerPath: 'posts',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/api' }),

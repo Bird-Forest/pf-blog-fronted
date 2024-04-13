@@ -7,27 +7,27 @@ import {
   WrapPanel,
 } from './Posts.styled';
 import { BsHandThumbsUpFill } from 'react-icons/bs';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateLikes } from '../../redux/servise';
-// import { GiSpy } from 'react-icons/gi';
+import { selectUser } from '../../redux/selectors';
 
 export default function UserPanel({ post }) {
   const [isDisabled, setIsDisabled] = useState(false);
   const dispatch = useDispatch();
   const user = post.owner;
-  console.log(user);
+  const userState = useSelector(selectUser);
+  const likes = userState.likes;
 
   const onAddLike = evt => {
-    const id = evt.currentTarge.name;
+    const id = evt.currentTarget.name;
     console.log(id);
     const like = Number(user.likes + 1);
-    let count = { likes: like };
+    console.log(like);
+    let likes = { likes: like };
 
-    dispatch(updateLikes(count));
+    dispatch(updateLikes({ id, likes }));
     setIsDisabled(true);
   };
-  // const avatar = user.avatar || '';
-  // const name = user.name || 'Guest';
 
   return (
     <WrapPanel>
@@ -44,7 +44,7 @@ export default function UserPanel({ post }) {
         >
           <BsHandThumbsUpFill className="icon like" />
         </BtnIcons>
-        <CountLike>{user.likes}</CountLike>
+        <CountLike>{likes}</CountLike>
       </div>
     </WrapPanel>
   );

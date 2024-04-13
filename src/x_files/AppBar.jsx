@@ -21,6 +21,8 @@ export default function AppBar() {
   // console.log(avatar);
   // const name = userD.name;
   // console.log(name);
+  const avatar = user.avatar;
+  const name = user.name;
   return (
     <WrapHeader>
       <WrapNav>
@@ -34,14 +36,14 @@ export default function AppBar() {
           my posts
         </NavLink>
         <ImgAvatar>
-          {user.avatar === ' ' ? (
+          {avatar === null ? (
             <GiSpy className="icon-avatar" />
           ) : (
-            <img src={user.avatar} alt="avatar" className="img-avatar" />
+            <img src={avatar} alt="avatar" className="img-avatar" />
           )}
         </ImgAvatar>
         <NameUser type="button" onClick={() => setIsShow(!isShow)}>
-          {user.name}
+          {name === null ? 'Guest' : name}
         </NameUser>
         {isShow && createPortal(<NavUser />, document.body)}
       </WrapNav>
