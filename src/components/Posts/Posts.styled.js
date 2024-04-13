@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // ******* MAIN SETTING *******
+export const WrapPostPage = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 8px;
+  margin: 0 auto;
+  @media screen and (min-width: 480px) {
+    padding: 16px 8px;
+  }
+`;
 export const WrapList = styled.ul`
   display: grid;
-  grid-template-columns: minmax(304px, 1fr);
+  grid-template-columns: minmax(288px, 1fr);
   grid-template-rows: 1fr;
   justify-content: start;
   align-items: center;
@@ -324,7 +334,7 @@ export const WrapCreate = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 8px 4px;
+  padding: 8px 0;
   margin: 0 auto;
   @media screen and (min-width: 480px) {
     padding: 16px 8px;
@@ -401,21 +411,27 @@ export const FormPost = styled.form`
 `;
 export const WrapBtn = styled.div`
   display: grid;
-  grid-template-columns: minmax(292px, 1fr);
+  grid-template-columns: minmax(288px, 1fr);
   grid-template-rows: 40px 40px;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   .btn {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
+    text-align: center;
     background-color: ${base.colors.green500};
     transition: all 0.3s;
     border: none;
     border-radius: 20px;
     text-decoration: none;
+    padding: 0;
     cursor: pointer;
     &:hover,
     :focus {

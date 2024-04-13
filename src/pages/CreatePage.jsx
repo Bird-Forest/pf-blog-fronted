@@ -1,11 +1,11 @@
 import React from 'react';
-import { WrapRender } from './Page.styled';
 import CreatePost from '../components/Posts/CreatePost';
+import { WrapPostPage } from 'components/Posts/Posts.styled';
 
 export default function CreatePage() {
   return (
-    <WrapRender>
+    <WrapPostPage>
       <CreatePost />
-    </WrapRender>
+    </WrapPostPage>
   );
 }

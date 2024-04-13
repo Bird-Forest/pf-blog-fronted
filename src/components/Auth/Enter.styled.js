@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import { base } from 'baseTheme';
+import imgBg from '../../img/discus.png';
 // import { Link } from 'react-router-dom';
 
 export const WrapEnter = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 80px 1fr;
   justify-content: center;
   align-items: start;
-  padding: 8px 4px;
+  padding: 20px 8px;
   margin: 0 auto;
-  @media screen and (min-width: 480px) {
+  /* @media screen and (min-width: 480px) {
     padding: 16px 8px;
-  }
+  } */
 `;
 
 // *******   WELLCOM  *******
@@ -21,7 +21,7 @@ export const WrapEnter = styled.div`
 export const WrapWell = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px;
+  grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
   padding: 0;
@@ -33,10 +33,11 @@ export const WrapWell = styled.div`
 
 export const WrapAuth = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(312px, 552px));
+  grid-template-columns: repeat(auto-fit, minmax(304px, 552px));
   grid-template-rows: 40px 1fr;
   justify-content: start;
   align-items: center;
+  padding: 0 8px;
 `;
 
 // *******   NAVIGATE  *******
@@ -77,17 +78,26 @@ export const WrapNav = styled.nav`
 export const WrapOutlet = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 60px;
-  gap: 20px;
+  grid-template-rows: 1fr;
+  /* gap: 20px; */
   justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0 auto;
+  /* background-color: red; */
+  background-image: url(${imgBg});
+  background-size: cover;
+  background-position: center center;
+  /* .img-bg {
+    display: grid;
+    grid-template-columns: minmax(272px, 552px);
+    grid-template-rows: 1fr;
+  } */
 `;
 
 export const WrapForm = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(296px, 552px));
+  grid-template-columns: repeat(auto-fit, minmax(272px, 552px));
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
