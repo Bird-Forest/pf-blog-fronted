@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pf-blog-frontend/static/css/main.d33dd536.css",
-    "main.js": "/pf-blog-frontend/static/js/main.85d66be9.js",
+    "main.js": "/pf-blog-frontend/static/js/main.ee1e6ee3.js",
     "static/js/789.1ec789e9.chunk.js": "/pf-blog-frontend/static/js/789.1ec789e9.chunk.js",
     "static/js/468.9804edc2.chunk.js": "/pf-blog-frontend/static/js/468.9804edc2.chunk.js",
     "static/js/954.55531aa8.chunk.js": "/pf-blog-frontend/static/js/954.55531aa8.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/discus.png": "/pf-blog-frontend/static/media/discus.4faa7cdb72dec76382e4.png",
     "index.html": "/pf-blog-frontend/index.html",
     "main.d33dd536.css.map": "/pf-blog-frontend/static/css/main.d33dd536.css.map",
-    "main.85d66be9.js.map": "/pf-blog-frontend/static/js/main.85d66be9.js.map",
+    "main.ee1e6ee3.js.map": "/pf-blog-frontend/static/js/main.ee1e6ee3.js.map",
     "789.1ec789e9.chunk.js.map": "/pf-blog-frontend/static/js/789.1ec789e9.chunk.js.map",
     "468.9804edc2.chunk.js.map": "/pf-blog-frontend/static/js/468.9804edc2.chunk.js.map",
     "954.55531aa8.chunk.js.map": "/pf-blog-frontend/static/js/954.55531aa8.chunk.js.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.d33dd536.css",
-    "static/js/main.85d66be9.js"
+    "static/js/main.ee1e6ee3.js"
   ]
 }
