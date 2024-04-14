@@ -5,7 +5,7 @@ export const Container = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 7vh 93vh;
+  grid-template-rows: 7, 5vh 93vh;
   justify-content: center;
   align-items: start;
   background-color: ${base.colors.ground};
@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const WrapHeader = styled.div`
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 6.5vh;
+  grid-template-rows: 7vh;
   justify-content: center;
   align-items: center;
   background-color: ${base.colors.green500};

@@ -2,25 +2,18 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { WrapHeader } from '../pages/Page.styled';
 import { NavLink } from 'react-router-dom';
-import { ImgAvatar, NameUser, WrapNav } from './Navigate.styled';
+import { ImgAvatar, NameUser, WrapLogo, WrapNav } from './Navigate.styled';
 import { GiSpy } from 'react-icons/gi';
 import { createPortal } from 'react-dom';
 import NavUser from './NavUser';
 import { selectUser } from '../redux/selectors';
+import { useAuth } from '../hooks/UseAuth';
 
 export default function AppBar() {
   const [isShow, setIsShow] = useState(false);
   const user = useSelector(selectUser);
+  const { isAuthorization } = useAuth();
 
-  // const userD = {
-  //   avatar: '',
-  //   name: 'Guest',
-  // };
-
-  // const avatar = userD.avatar;
-  // console.log(avatar);
-  // const name = userD.name;
-  // console.log(name);
   const avatar = user.avatar;
   const name = user.name;
   return (
@@ -29,23 +22,28 @@ export default function AppBar() {
         <NavLink className="navigate" to="/">
           posts
         </NavLink>
-        <NavLink className="navigate" to="/enter">
-          enter
-        </NavLink>
-        <NavLink className="navigate" to="/user-posts">
-          my posts
-        </NavLink>
-        <ImgAvatar>
-          {avatar === null ? (
-            <GiSpy className="icon-avatar" />
-          ) : (
-            <img src={avatar} alt="avatar" className="img-avatar" />
-          )}
-        </ImgAvatar>
-        <NameUser type="button" onClick={() => setIsShow(!isShow)}>
-          {name === null ? 'Guest' : name}
-        </NameUser>
-        {isShow && createPortal(<NavUser />, document.body)}
+        {isAuthorization ? (
+          <WrapLogo>
+            <NavLink className="navigate" to="/user-posts">
+              my posts
+            </NavLink>
+            <ImgAvatar>
+              {avatar === null ? (
+                <GiSpy className="icon-avatar" />
+              ) : (
+                <img src={avatar} alt="avatar" className="img-avatar" />
+              )}
+            </ImgAvatar>
+            <NameUser type="button" onClick={() => setIsShow(!isShow)}>
+              {name === null ? 'Guest' : name}
+            </NameUser>
+            {isShow && createPortal(<NavUser />, document.body)}
+          </WrapLogo>
+        ) : (
+          <NavLink className="navigate" to="/enter">
+            enter
+          </NavLink>
+        )}
       </WrapNav>
     </WrapHeader>
   );

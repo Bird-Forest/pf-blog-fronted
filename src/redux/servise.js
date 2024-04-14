@@ -42,6 +42,23 @@ export const signInUser = createAsyncThunk(
     }
   }
 );
+
+export const getUser = createAsyncThunk(
+  'auth/getuser',
+  async (id, thunkAPI) => {
+    try {
+      const state = thunkAPI.getState();
+      const token = state.auth.token;
+      setAuthHeader(token);
+      const res = await axios.get(`/${id}`);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 /*
  * PUT @ /users/updateName  * headers: Authorization: Bearer token
  */

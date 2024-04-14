@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import axios from 'axios';
+// import { useAuth } from '../hooks/UseAuth';
 
 const auth = JSON.parse(localStorage.getItem('persist:auth'));
-// console.log(auth);
+console.log(auth);
 const tokenAuth = auth.token;
-// console.log(tokenAuth);
+console.log(tokenAuth);
 const token = tokenAuth ? tokenAuth.replace(/"/g, '') : ' ';
 console.log(token);
 

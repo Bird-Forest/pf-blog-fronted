@@ -3,12 +3,12 @@ import { base } from 'baseTheme';
 
 export const WrapNav = styled.header`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 36px 1fr;
-  grid-template-rows: 1fr;
-  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 0;
+  padding: 0 8px;
   .navigate {
     font-size: clamp(16px, 0.909rem + 0.45vw, 20px);
     font-weight: 600;
@@ -19,6 +19,18 @@ export const WrapNav = styled.header`
       color: #ffffff;
     }
   }
+  @media screen and (min-width: 480px) {
+    padding: 0 16px;
+  }
+`;
+export const WrapLogo = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr;
+  grid-template-rows: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
 `;
 export const ImgAvatar = styled.div`
   display: grid;
@@ -27,11 +39,12 @@ export const ImgAvatar = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  background-size: cover;
   padding: 0;
   background-color: ${base.colors.green50};
   .img-avatar {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
   }

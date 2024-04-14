@@ -7,6 +7,7 @@ import {
   updateAvatar,
   updateUser,
   updateLikes,
+  getUser,
 } from './servise';
 
 const initialState = {
@@ -54,6 +55,15 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(signInUser.rejected, handleRejected)
+
+      // ---------- USER BY ID ----------------
+      .addCase(getUser.pending, handlePending)
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.token = action.payload.token;
+        state.user = action.payload.user;
+        state.isLoading = false;
+      })
+      .addCase(getUser.rejected, handleRejected)
 
       // ---------- LOGOUT USER ----------------
       .addCase(logOutUser.pending, handlePending)
