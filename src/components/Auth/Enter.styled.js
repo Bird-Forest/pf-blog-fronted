@@ -1,47 +1,63 @@
 import styled from 'styled-components';
 import { base } from 'baseTheme';
-import imgBg from '../../img/discus.png';
+import imgBg from '../../img/woman.png';
 // import { Link } from 'react-router-dom';
 
 export const WrapEnter = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 80px 100vh;
   justify-content: center;
-  align-items: start;
+  align-items: end;
+  background-color: ${base.colors.ground};
   padding: 20px 8px;
   margin: 0 auto;
-  /* @media screen and (min-width: 480px) {
+  @media screen and (min-width: 480px) {
     padding: 16px 8px;
-  } */
-`;
-
-// *******   WELLCOM  *******
-
-export const WrapWell = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0 auto;
-  background-color: aqua;
+  }
 `;
 
 // *******   AUTH  *******
 
 export const WrapAuth = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(304px, 552px));
-  grid-template-rows: 40px 1fr;
-  justify-content: start;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 552px));
+  grid-template-rows: 1fr 40px;
+  justify-content: center;
+  align-items: end;
+  gap: 16px;
   padding: 0 8px;
+`;
+export const WrapOutlet = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background-image: url(${imgBg});
+  background-size: 280px 280px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 4px;
+  padding: 0;
+  margin: 0 auto;
 `;
 
 // *******   NAVIGATE  *******
-
+export const WrapWell = styled.h2`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: end;
+  font-size: clamp(16px, 0.909rem + 0.45vw, 20px);
+  font-weight: 600;
+  text-align: center;
+  color: ${base.colors.yellow};
+  padding: 8px;
+  margin: 0 auto;
+`;
 export const WrapNav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -52,7 +68,7 @@ export const WrapNav = styled.nav`
     justify-content: center;
     align-items: center;
     font-size: clamp(16px, 0.909rem + 0.45vw, 20px);
-    font-weight: 600;
+    font-weight: 700;
     color: ${base.colors.green900};
     text-decoration: none;
     transition: all 0.3s;
@@ -75,36 +91,25 @@ export const WrapNav = styled.nav`
 
 // *******   FORM  *******
 
-export const WrapOutlet = styled.div`
+export const WrapSign = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 552px));
   grid-template-rows: 1fr;
-  /* gap: 20px; */
   justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0 auto;
-  /* background-color: red; */
-  background-image: url(${imgBg});
-  background-size: cover;
-  background-position: center center;
-  /* .img-bg {
-    display: grid;
-    grid-template-columns: minmax(272px, 552px);
-    grid-template-rows: 1fr;
-  } */
+  align-items: start;
+  padding: 0 8px;
 `;
 
 export const WrapForm = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(272px, 552px));
-  grid-template-rows: 1fr;
+  grid-template-rows: 300px;
   justify-content: center;
   align-items: center;
   background-color: ${base.colors.green50};
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
-  padding: 16px 8px;
+  padding: 0 8px;
   margin: 0 auto;
   .form-up {
     display: grid;

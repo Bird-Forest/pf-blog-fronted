@@ -6,7 +6,10 @@ import styled from 'styled-components';
 export const WrapPostPage = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100vh;
+  justify-content: center;
+  align-items: start;
+  background-color: ${base.colors.ground};
   padding: 8px;
   margin: 0 auto;
   @media screen and (min-width: 480px) {

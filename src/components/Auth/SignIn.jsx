@@ -1,7 +1,7 @@
 import { Formik, Form } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-import { BtnAuth, WrapForm, WrapOutlet } from './Enter.styled';
+import { BtnAuth, WrapForm, WrapSign } from './Enter.styled';
 import FormName from './FormName';
 import FormPass from './FormPass';
 import Spinner from 'components/Helper/Spinner';
@@ -27,7 +27,7 @@ export default function SignIn() {
   const isError = useSelector(selectErrorUser);
 
   return (
-    <WrapOutlet>
+    <WrapSign>
       <WrapForm>
         <Formik
           initialValues={initialValues}
@@ -60,6 +60,6 @@ export default function SignIn() {
           onClose={() => setIsShow(false)}
         />
       )}
-    </WrapOutlet>
+    </WrapSign>
   );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
-import { WrapAuth, WrapNav, WrapOutlet } from './Enter.styled';
+import { NavLink } from 'react-router-dom';
+import { WrapAuth, WrapNav, WrapWell } from './Enter.styled';
 
 export default function Auth() {
   return (
     <WrapAuth>
+      <WrapWell>Welcome to our community</WrapWell>
       <WrapNav>
         <NavLink className="navigate left" to="sign-up">
           sign Up
@@ -13,9 +14,6 @@ export default function Auth() {
           sign In
         </NavLink>
       </WrapNav>
-      <WrapOutlet>
-        <Outlet />
-      </WrapOutlet>
     </WrapAuth>
   );
 }
